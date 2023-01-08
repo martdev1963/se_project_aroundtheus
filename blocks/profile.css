@@ -1,0 +1,87 @@
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 47.25;
+}
+
+.profile__avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-right: 30px;
+}
+
+.profile__description {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-width: 0;
+}
+
+/* like .profile__description-title */
+.profile__description-info {
+  display: flex;
+  align-items: center;
+}
+
+/* like .profile__title */
+.profile__name {
+  max-width: 400px;
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 48;
+  margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* pencil button for editing profile... */
+.profile__edit {
+  width: 24px;
+  height: 24px;
+  margin-left: 18px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #ffffff;
+  background-image: url(../images/pencil.svg);
+  min-width: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.profile__edit:hover {
+  opacity: 0.6;
+}
+
+/* like .profile__subtitle */
+.profile__job-title {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  margin-top: 8px;
+  margin-bottom: 24.75px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 240px;
+}
+
+/* plus sign button */
+.profile__button {
+  width: 150px;
+  height: 50px;
+  flex-shrink: 0;
+  background-color: #ffffff;
+  border: #ffffff 2px solid;
+  color: #ffffff;
+  padding: 0;
+  font-size: 44x;
+  font-weight: 100;
+  line-height: 0;
+  border-radius: 2px;
+}
+
+.profile__button:hover {
+  opacity: 0.6;
+}

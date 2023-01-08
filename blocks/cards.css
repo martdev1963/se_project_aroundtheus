@@ -1,0 +1,51 @@
+.cards {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
+  column-gap: 17px;
+  row-gap: 20px;
+  justify-items: center;
+  max-width: 880px;
+}
+
+/* this contains all the 'things' in the card */
+.cards__content {
+  width: 282px;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* the card img */
+.cards__card {
+  height: 282px;
+}
+
+/* cards__footer contains the elements below it... */
+.cards__footer {
+  display: flex;
+  color: #000;
+}
+
+.cards__caption {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  flex: 1;
+  margin: 25px 0 25px 20px;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+/*this is a button in the shape of a heart */
+.cards__heart {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  padding: 0;
+  margin-right: 20px;
+}
+
+.cards__heart:hover {
+  opacity: 0.5;
+}
