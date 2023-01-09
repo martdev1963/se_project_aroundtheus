@@ -14,13 +14,14 @@
 /* this contains all the 'things' in the card */
 .cards__content {
   width: 282px;
-  background-color: #fff;
+  /*background-color: #fff;*/ /* applied bg-color to cards__footer instead */
   border-radius: 10px;
   overflow: hidden;
 }
 
 /* the card img */
 .cards__card {
+  display: block; /* per code review for removing default inline-block behavior*/
   height: 282px;
   width: 282px;
 }
@@ -29,6 +30,7 @@
 .cards__footer {
   display: flex;
   color: #000;
+  background-color: #fff; /* applied bg-color per code review */
 }
 
 .cards__caption {
