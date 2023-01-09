@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-bottom: 47.25;
+  padding-bottom: 46.3px;
 }
 
 .profile__avatar {
@@ -17,6 +17,9 @@
   flex-direction: column;
   flex-grow: 1;
   min-width: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .profile__description-info {
@@ -81,4 +84,87 @@
 
 .profile__button:hover {
   opacity: 0.6;
+}
+
+/* Media Queries */
+
+/* for screens with max width 900px */
+@media screen and (max-width: 900px) {
+  .profile__name {
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .profile {
+    margin: 0 auto;
+  }
+
+  .profile__edit {
+    margin-right: 20px;
+    width: 18px;
+    height: 18px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    min-width: 18px;
+    background-size: 7.5px;
+  }
+
+  .profile__job-title {
+    text-align: center;
+    max-width: 600px;
+  }
+
+  .profile__button {
+    width: 40px;
+    background-size: 20px;
+  }
+}
+
+/* for screens with max width 595px */
+@media screen and (max-width: 595px) {
+  .profile {
+    flex-direction: column;
+    padding: 0;
+    margin: 40px 19px 32px 19px;
+  }
+
+  .profile__job-title {
+    font-size: 14px;
+    line-height: 17px;
+    max-width: 250px;
+    margin-top: 14px;
+    margin-bottom: 36px; /* from plus button */
+  }
+
+  .profile__button {
+    width: 100%; /* 282(w) x 50(h) */
+    margin: 0;
+  }
+
+  .profile__name {
+    font-size: 22px;
+    line-height: 27px;
+    text-align: center;
+    padding: 0;
+    max-width: 250px;
+  }
+
+  .profile__description-info {
+    padding-top: 26.28px;
+  }
+
+  .profile__description {
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile__button {
+    margin-right: 0;
+    min-width: 18px;
+  }
+
+  .profile__avatar {
+    margin-right: 0;
+  }
 }

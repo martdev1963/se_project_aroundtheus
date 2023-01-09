@@ -13,6 +13,8 @@
   max-width: 880px; /*widens the page content to fit 3 cards across*/
 }
 
+/* media query for sreens with max width: 900px */
+
 @media screen and (max-width: 900px) {
   .page__content {
     max-width: 600px;

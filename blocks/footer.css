@@ -12,3 +12,12 @@
   color: #545454;
   padding-top: 67px;
 }
+
+/* Media Query */
+@media screen and (max-width: 959px) {
+  .footer__copywrite {
+    font-size: 14px;
+    line-height: 17px;
+    padding: 48px 19px 37px 19px;
+  }
+}

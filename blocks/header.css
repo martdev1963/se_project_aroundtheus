@@ -8,3 +8,19 @@
   align-self: start;
   padding-bottom: 41px;
 }
+
+/* Media Query */
+@media screen and (max-width: 595px) {
+  .header__logo {
+    width: 130px;
+    height: 25px;
+    padding: 30px 167px 32px 28px;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+}

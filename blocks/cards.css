@@ -6,6 +6,9 @@
   row-gap: 20px;
   justify-items: center;
   max-width: 880px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 /* this contains all the 'things' in the card */
@@ -19,6 +22,7 @@
 /* the card img */
 .cards__card {
   height: 282px;
+  width: 282px;
 }
 
 /* cards__footer contains the elements below it... */
@@ -50,4 +54,19 @@
   opacity: 0.5;
 }
 
-/* media queries below */
+/* Media Queries below */
+
+@media screen and (max-width: 900px) {
+  .cards {
+    max-width: 600px;
+  }
+}
+
+@media screen and (max-width: 595px) {
+  .cards {
+    grid-template-columns: 1fr;
+    grid-template-rows: 6;
+    max-width: calc(100% - 38px);
+    margin: auto;
+  }
+}
