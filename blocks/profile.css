@@ -77,12 +77,15 @@
   /*background-color: #000000;*/
   background-color: transparent; /* changed per code review */
   border: #ffffff 2px solid;
+  background-image: url(../images/plus.svg);
   color: #ffffff;
   padding: 0;
   font-size: 44px;
   font-weight: 100;
   line-height: 0;
   border-radius: 2px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .profile__button:hover {
@@ -119,7 +122,6 @@
   }
 
   .profile__button {
-    /*width: 40px;*/
     background-size: 16px;
   }
 }
