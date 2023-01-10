@@ -10,3 +10,55 @@
   overflow: hidden;
   white-space: nowrap;
 }
+
+/* this contains all the 'things' in the card */
+.card {
+  width: 282px;
+  /*background-color: #fff;*/ /* applied bg-color to cards__footer instead */
+  border-radius: 10px;
+  overflow: hidden;
+  list-style-type: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* the card img */
+.card__img {
+  display: block; /* per code review for removing default inline-block behavior*/
+  height: 282px;
+  width: 282px;
+}
+
+/* cards__footer contains the elements below it... */
+.card__footer {
+  display: flex;
+  color: #000;
+  background-color: #fff; /* applied bg-color per code review */
+}
+
+.card__caption {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  flex: 1;
+  margin: 25px 0 25px 20px;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+/*this is a button in the shape of a heart */
+.card__heart {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  padding: 0;
+  margin-right: 20px;
+}
+
+.card__heart:hover {
+  opacity: 0.5;
+}
+
+/* Media Queries below */
