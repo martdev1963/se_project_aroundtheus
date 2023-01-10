@@ -1,6 +1,8 @@
 /* this contains all the 'things' in the card */
 .card {
-  display: grid;
+  display: flexbox;
+  flex-direction: column;
+  /*display: grid;*/
   margin: 0 auto;
   grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
   column-gap: 17px;
@@ -44,6 +46,8 @@
   font-weight: 900;
   font-size: 24px;
   line-height: 29px;
+  width: 100%;
+  /*width: auto;*/
 }
 
 /*this is a button in the shape of a heart */

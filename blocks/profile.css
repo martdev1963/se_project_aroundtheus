@@ -77,7 +77,7 @@
   /*background-color: #000000;*/
   background-color: transparent; /* changed per code review */
   border: #ffffff 2px solid;
-  background-image: url(../images/plus.svg);
+  background-image: url(../images/plus.svg); /* per code review */
   color: #ffffff;
   padding: 0;
   font-size: 44px;
