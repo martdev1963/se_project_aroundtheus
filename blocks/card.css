@@ -1,3 +1,4 @@
+/* this contains all the 'things' in the card */
 .card {
   display: grid;
   margin: 0 auto;
@@ -9,10 +10,6 @@
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-}
-
-/* this contains all the 'things' in the card */
-.card {
   width: 282px;
   /*background-color: #fff;*/ /* applied bg-color to cards__footer instead */
   border-radius: 10px;
