@@ -10,12 +10,11 @@
   justify-items: center;
   max-width: 880px;
   text-overflow: ellipsis;
-  overflow: hidden;
+  overflow: hidden; /*got rid of multiple overflow property code */
   white-space: nowrap;
   width: 282px;
   /*background-color: #fff;*/ /* applied bg-color to cards__footer instead */
   border-radius: 10px;
-  overflow: hidden;
   list-style-type: none;
   margin-top: 0;
   margin-bottom: 0;
