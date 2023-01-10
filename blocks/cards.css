@@ -10,10 +10,11 @@
   overflow: hidden;
   white-space: nowrap;
   list-style-type: none;
-  margin-top: 0;
+  margin-top: 0; /* zeroing out the <ul> tag browser default values */
   margin-bottom: 0;
   margin-left: 0;
   margin-right: 0;
+  padding-left: 0;
 }
 
 @media screen and (max-width: 900px) {

@@ -22,7 +22,7 @@
 }
 
 /* the card img */
-.card__img {
+.card__image {
   display: block; /* per code review for removing default inline-block behavior*/
   height: 282px;
   width: 282px;
