@@ -2,22 +2,22 @@
   max-width: 880px;
   margin: 45px 0 40px;
   border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+  padding-bottom: 41px; /* per code review */
 }
 
 /* Media Query */
 @media screen and (max-width: 595px) {
   .header__logo {
-    width: 130px;
-    height: 25px;
-    /*align-self: start; */ /* removed as per code review */
-    /*padding-bottom: 41px;*/ /* removed as per code review */
-    /*padding: 28px 160px 32px 27px;*/ /* removed padding per code review */
+    width: 173px; /* dimension values per Figma design */
+    height: 33px;
   }
 
   .header {
     display: flex;
     flex-direction: column;
-    /*align-items: center;*/ /* removed as per code review */
-    margin: 25px 0 20px; /*made slight adjustment instead of margin reset per code review*/
+    margin-top: 25px;
+    margin-left: 0;
+    padding-bottom: 32px; /* per Figma design for mobile version */
+    padding-left: 27px; /* per Figma design for mobile version */
   }
 }

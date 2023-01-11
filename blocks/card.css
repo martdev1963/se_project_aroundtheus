@@ -2,24 +2,8 @@
 .card {
   display: flexbox;
   flex-direction: column;
-  /*display: grid;*/
-  margin: 0 auto;
-  grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
-  column-gap: 17px;
-  row-gap: 20px;
   justify-items: center;
-  max-width: 880px;
-  text-overflow: ellipsis;
-  overflow: hidden; /*got rid of multiple overflow property code */
-  white-space: nowrap;
   width: 282px;
-  /*background-color: #fff;*/ /* applied bg-color to cards__footer instead */
-  border-radius: 10px;
-  list-style-type: none;
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
 }
 
 /* the card img */
