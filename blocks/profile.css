@@ -49,6 +49,7 @@
   min-width: 24px;
   background-repeat: no-repeat;
   background-position: center;
+  cursor: pointer; /* per code review */
 }
 
 .profile__edit:hover {
@@ -83,6 +84,7 @@
   border-radius: 2px;
   background-repeat: no-repeat;
   background-position: center;
+  cursor: pointer; /* per code review */
 }
 
 .profile__button:hover {

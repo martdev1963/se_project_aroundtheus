@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-items: center;
   width: 282px;
-  border-radius: 10px 10px 0px 0px; /* per code review */
+  border-radius: 10px 10px 10px 10px; /* four corners rounded per code review */
   overflow: hidden;
 }
 
@@ -41,10 +41,9 @@
   border: none;
   padding: 0;
   margin-right: 20px;
+  cursor: pointer; /* percode review */
 }
 
 .card__heart:hover {
   opacity: 0.5;
 }
-
-/* Media Queries below */

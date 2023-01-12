@@ -17,14 +17,3 @@
   margin-right: 0;
   padding-left: 0;
 }
-
-/* media queries */
-@media screen and (max-width: 595px) {
-  .cards__list {
-    grid-template-columns: 1fr;
-    grid-template-rows: 6;
-    max-width: calc(100% - 38px);
-    margin: auto;
-    justify-items: center;
-  }
-}
