@@ -5,11 +5,16 @@
   padding-bottom: 41px; /* per code review */
 }
 
+.header__logo {
+  width: 173px; /* Desktop dimension values per Figma design */
+  height: 33px;
+}
+
 /* Media Query */
 @media screen and (max-width: 595px) {
   .header__logo {
-    width: 173px; /* dimension values per Figma design */
-    height: 33px;
+    width: 126px; /* mobile dimension values per Figma design */
+    height: 24px;
   }
 
   .header {

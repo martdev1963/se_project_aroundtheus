@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 51px; /* placed here per code review */
 }
 
 .profile__avatar {
@@ -9,7 +10,6 @@
   height: 120px;
   border-radius: 50%;
   margin-right: 30px;
-  margin-bottom: 51px; /*per code review using integer value on margin-bottom */
 }
 
 .profile__description {

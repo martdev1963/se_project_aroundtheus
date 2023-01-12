@@ -1,8 +1,5 @@
 .cards {
   /* section's class per code review */
-  column-gap: 17px;
-  row-gap: 20px;
-  justify-items: center;
   max-width: 880px;
 }
 
@@ -10,6 +7,9 @@
   display: grid;
   margin: 0 auto;
   grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
+  column-gap: 17px;
+  row-gap: 20px;
+  justify-items: center;
   list-style-type: none;
   margin-top: 0; /* zeroing out the <ul> tag browser default values */
   margin-bottom: 0;

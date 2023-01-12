@@ -1,9 +1,11 @@
 /* this contains all the 'things' in the card */
 .card {
-  display: flexbox;
+  display: flex;
   flex-direction: column;
   justify-items: center;
   width: 282px;
+  border-radius: 10px 10px 0px 0px; /* per code review */
+  overflow: hidden;
 }
 
 /* the card img */
