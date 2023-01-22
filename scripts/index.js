@@ -1,4 +1,8 @@
-// array of objects
+/**
+ * ---------------------------
+ *     Array of Objects
+ * ---------------------------
+ */
 const initialCards = [
   (yosemiteObj = {
     name: "Yosemite Valley",
@@ -25,3 +29,35 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lago.jpg",
   }),
 ];
+
+/**
+ * -----------------
+ *     Elements
+ * -----------------
+ */
+const profileEditButton = document.querySelector("#profile-edit-button");
+const profileEditModal = document.querySelector("#profile-edit-modal");
+const modalCloseButton = document.querySelector("#modal-close-button");
+
+/**
+ * -----------------
+ *     Functions
+ * -----------------
+ */
+
+function closePopUp() {
+  profileEditModal.classList.remove("modal_opened"); // removes boolean modifier class from the box modal
+}
+
+/**
+ * -----------------------
+ *     Event Listeners
+ * -----------------------
+ */
+
+// passing an anonymous function as 2nd parameter to addEventListener using arrow notation...
+profileEditButton.addEventListener("click", () => {
+  profileEditModal.classList.add("modal_opened"); // adds boolean modifier class to the box modal, making it dynamically appear...
+});
+
+modalCloseButton.addEventListener("click", closePopUp); // call closePopUp() function upon clicking modalCloseButton...
