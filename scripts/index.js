@@ -40,7 +40,8 @@ const initialCards = [
 // profile
 const profileEditButton = document.querySelector("#profile-edit-button");
 const profileEditModal = document.querySelector("#profile-edit-modal");
-const modalCloseButton = document.querySelector("#modal-close-button");
+//const modalCloseButton = document.querySelector("#modal-close-button");
+const profileCloseButton = document.querySelector("#modal-close-button");
 const profileName = document.querySelector("#profile-name");
 const profileJobTitle = document.querySelector("#profile-job-title");
 const profileNameInput = document.querySelector("#profile-name-input");
@@ -73,12 +74,12 @@ const cardImageModalClose = document.querySelector("#card-image-close");
  * -----------------
  */
 
-function closePopUp() {
+function closePopUp(popUp) {
   profileEditModal.classList.remove("modal_opened"); // removes boolean modifier class from the box modal
 }
 
-function openPopUp() {
-  openPopUp.classList.add("modal_operned");
+function openPopUp(popUp) {
+  popUp.classList.add("modal_opened");
 }
 
 function renderCard(cardElement, container) {
@@ -198,12 +199,9 @@ initialCards.forEach((cardData) => {
   renderCard(cardView, cardListElement);
 });
 
-/*
 // passing an anonymous function as 2nd parameter to addEventListener using arrow notation...
 profileEditButton.addEventListener("click", () => {
   profileEditModal.classList.add("modal_opened"); // adds boolean modifier class to the box modal, making it dynamically appear...
 });
 
-modalCloseButton.addEventListener("click", closePopUp); // call closePopUp() function upon clicking modalCloseButton...
-
-*/
+profileCloseButton.addEventListener("click", closePopUp); // call closePopUp() function upon clicking modalCloseButton...
