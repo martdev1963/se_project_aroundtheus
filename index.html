@@ -38,96 +38,15 @@
             </div>
             <p class="profile__job-title" id="profile-job-title">Explorer</p>
           </div>
-          <button class="profile__button" type="button"></button>
+          <button
+            class="profile__button"
+            id="profile-button"
+            type="button"
+          ></button>
         </section>
         <section class="cards">
           <ul class="cards__list">
             <!--CARDS START-->
-            <li class="card">
-              <!-- Card Block--->
-              <img
-                class="card__image"
-                src="./images/yosemite-valley.jpg"
-                alt=" yosemite-valley"
-              />
-              <div class="card__footer">
-                <h2 class="card__caption">Yosemite Valley</h2>
-                <button class="card__heart" type="button">
-                  <img src="./images/heart.svg" alt="heart-button" />
-                </button>
-              </div>
-            </li>
-            <li class="card">
-              <!-- Card Block--->
-              <img
-                class="card__image"
-                src="./images/lake-louise.jpg"
-                alt="lake-louise"
-              />
-              <div class="card__footer">
-                <h2 class="card__caption">Lake Louise</h2>
-                <button class="card__heart" type="button">
-                  <img src="./images/heart.svg" alt="heart-button" />
-                </button>
-              </div>
-            </li>
-            <li class="card">
-              <!-- Card Block--->
-              <img
-                class="card__image"
-                src="./images/bald-mountains.jpg"
-                alt="bald-mountains"
-              />
-              <div class="card__footer">
-                <h2 class="card__caption">Bald Mountains</h2>
-                <button class="card__heart" type="button">
-                  <img src="./images/heart.svg" alt="heart-button" />
-                </button>
-              </div>
-            </li>
-            <li class="card">
-              <!-- Card Block--->
-              <img
-                class="card__image"
-                src="./images/latemar.jpg"
-                alt="latemar"
-              />
-              <div class="card__footer">
-                <h2 class="card__caption">Latemar</h2>
-                <button class="card__heart" type="button">
-                  <img src="./images/heart.svg" alt="heart-button" />
-                </button>
-              </div>
-            </li>
-            <li class="card">
-              <!-- Card Block--->
-              <img
-                class="card__image"
-                src="./images/vanoise.jpg"
-                alt="vanoise-national-park"
-              />
-              <div class="card__footer">
-                <h2 class="card__caption">Vanoise National Park</h2>
-                <button class="card__heart" type="button">
-                  <img src="./images/heart.svg" alt="heart-button" />
-                </button>
-              </div>
-            </li>
-            <li class="card">
-              <!-- Card Block--->
-              <img
-                class="card__image"
-                src="./images/lago.jpg"
-                alt="lago-di-braies"
-              />
-              <div class="card__footer">
-                <h2 class="card__caption">Lago di Braies</h2>
-                <button class="card__heart" type="button">
-                  <img src="./images/heart.svg" alt="heart-button" />
-                </button>
-              </div>
-            </li>
-            <!--CARDS END-->
           </ul>
         </section>
       </main>
@@ -140,12 +59,13 @@
         <button class="modal__close" id="modal-close-button"></button>
         <!-- modal__close... the x button image -->
         <p class="modal__heading">Edit profile</p>
-        <form class="modal__form">
+        <form class="modal__form" id="profile-edit-form">
           <input
             class="form__input"
             type="text"
             name="title"
             placeholder="Name"
+            id="profile-name-input"
             required
           />
           <input
@@ -153,12 +73,60 @@
             type="text"
             name="description"
             placeholder="About me"
+            id="profile-job-input"
             required
           />
           <button class="modal__button">Save</button>
         </form>
       </div>
     </div>
+    <div class="modal" id="card-add-modal">
+      <div class="modal__container">
+        <button class="modal__close" id="card-add-close"></button>
+        <p class="modal__heading">New Place</p>
+        <form class="modal__form" id="card-add-form">
+          <input
+            class="modal__form-input"
+            type="text"
+            name="title"
+            placeholder="Title"
+            id="card-title-input"
+            required
+          />
+          <input
+            class="modal__form-input"
+            type="text"
+            name="link"
+            placeholder="Image link"
+            id="card-image-input"
+            required
+          />
+          <button class="modal__button">Create</button>
+        </form>
+      </div>
+    </div>
+    <div class="modal" id="card-image-modal">
+      <div class="modal__container-card">
+        <img class="modal__image-card" id="card-modal-image" src="#" alt="" />
+        <p class="modal__caption-card" id="card-modal-caption"></p>
+        <button class="modal__close" id="card-image-close"></button>
+      </div>
+    </div>
+    <template id="card-template">
+      <li class="card">
+        <button
+          class="card__delete-button"
+          id="card-delete-button"
+          type="button"
+        ></button>
+        <img class="card__image" src="#" alt="" id="card-image" />
+        <div class="card__footer">
+          <!--<div class="card__description"> <-----commented out... not sure how template will behave with flex ...plugging in .card__footer class which contains display: flex; -->
+          <h2 class="card__caption" id="card-title"></h2>
+          <button class="card__heart"></button>
+        </div>
+      </li>
+    </template>
     <script type="text/javascript" src="./scripts/index.js"></script>
     <!--placed script tag here so that the DOM gets loaded with the html elements' classes and ids, etc... before script is parsed.-->
   </body>

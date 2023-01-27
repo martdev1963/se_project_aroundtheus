@@ -37,11 +37,16 @@
 
 /*this is a button in the shape of a heart */
 .card__heart {
+  background: transparent url(../images/heart.svg) center no-repeat;
   background-color: rgba(0, 0, 0, 0);
   border: none;
   padding: 0;
   margin-right: 20px;
   cursor: pointer; /* percode review */
+}
+
+.card__heart_LikeButton_active {
+  background: url(../images/heart-active.svg);
 }
 
 .card__heart:hover {
