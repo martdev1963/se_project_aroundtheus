@@ -75,6 +75,7 @@ const cardImageModalClose = document.querySelector("#card-image-close");
  */
 
 function closePopUp(popUp) {
+  // uses the parameter popUp, making it more transparent and not for just one specific element.
   popUp.classList.remove("modal_opened"); // removes boolean modifier class from the box modal
   console.log("called on clicking card-image-close");
 }
