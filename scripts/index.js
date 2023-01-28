@@ -58,7 +58,7 @@ const cardTitleInput = document.querySelector("#card-title-input");
 const cardImageInput = document.querySelector("#card-image-input");
 const cardListElement = document.querySelector(".cards__list"); // <ul class="cards__list"> populated dynamically
 
-// extract content from <template> look at function definition @ loc:92
+// extract content from <template> look at function  getCardView(cardData) definition @ loc:95
 const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
 
@@ -75,12 +75,12 @@ const cardImageModalClose = document.querySelector("#card-image-close");
  */
 
 function closePopUp(popUp) {
-  profileEditModal.classList.remove("modal_opened"); // removes boolean modifier class from the box modal
+  popUp.classList.remove("modal_opened"); // removes boolean modifier class from the box modal
   console.log("called on clicking card-image-close");
 }
 
 function openPopUp(popUp) {
-  popUp.classList.add("modal_opened");
+  popUp.classList.add("modal_opened"); // adds boolean modifier class to the box modal
 }
 
 function renderCard(cardElement, container) {
@@ -138,7 +138,7 @@ function handleCardAddSubmit(e) {
   cardTitle.textContent = cardTitleInput.value; // cardTitle variable declared in loc:54
   cardImage.src = cardImageInput.value; // cardImage variable declared in loc:55
   cardImage.alt = cardImageInput.value;
-  closePopUp(cardAddModal); // close the form element loc:83 in html file declared in loc:51 in js file
+  closePopUp(cardAddModal); // close the form element loc:83 in html file declared in loc:52 in js file
 }
 
 function deleteCard(e) {
