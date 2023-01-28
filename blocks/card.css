@@ -6,6 +6,7 @@
   width: 282px;
   border-radius: 10px 10px 10px 10px; /* four corners rounded per code review */
   overflow: hidden;
+  position: relative; /* typical setting for a parent container */
 }
 
 /* the card img */
@@ -61,13 +62,16 @@
   cursor: pointer; /* percode review */
 }
 
-/*must code the .card__delete-button for the template */
-
-.card__delete-button {
-  background: transparent url(../images/trash-icon.svg) center no-repeat;
+.card__heart:hover {
+  /*opacity: 0.5;*/
 }
 
-#card-delete-button {
-  top: 110px;
-  left: 190px;
+.card__delete-button {
+  width: 20px;
+  height: 20px;
+  background: transparent url(../images/trash-icon.svg) center no-repeat;
+  position: absolute; /* typical setting for a child element */
+  top: 20px;
+  right: 20px;
+  border: 0;
 }

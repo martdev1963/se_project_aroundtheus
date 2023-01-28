@@ -51,7 +51,7 @@ const profileEditForm = document.querySelector("#profile-edit-form");
 // card
 const cardAddModal = document.querySelector("#card-add-modal");
 const cardCloseButton = cardAddModal.querySelector("#card-add-close"); //selecting child from parent container
-const cardAddButton = document.querySelector("#profile-button"); // loc: 43 in profile <section>
+const cardAddButton = document.querySelector("#profile-button"); // loc:43 in profile <section> html
 const cardTitle = document.querySelector("#card-title"); // h2 element in template
 const cardImage = document.querySelector("#card-image"); // img element in template
 const cardTitleInput = document.querySelector("#card-title-input");
@@ -91,6 +91,7 @@ function renderCard(cardElement, container) {
 
 function deleteCard(e) {
   e.target.closest(".card").remove();
+  console.log("function called from loc:110 event listener! ");
 }
 
 function getCardView(cardData) {
@@ -107,11 +108,14 @@ function getCardView(cardData) {
   });
 
   cardDeleteButton.addEventListener("click", () => {
-    deleteCard(cardData);
+    // loc:102 variable assigned to class not id
+    deleteCard(cardData); // function definition: loc:92
+    console.log("even listenser triggered! ");
   });
 
   cardImageElement.addEventListener("click", () => {
-    handleCardImageModal(cardData);
+    // const cardImageElement representing the .card__image loc:99 js - loc:122 html
+    handleCardImageModal(cardData); // this function (defined in loc:151) is called when clicking on card image
   });
   /* ----  function getCardView() Event Listeners End ---- */
 
@@ -151,7 +155,7 @@ function handleCardImageModal(cardData) {
   modalImage.src = cardData.link;
   modalImage.alt = cardData.name;
   modalCaption.textContent = cardData.name;
-  openPopUp(cardImageModal);
+  openPopUp(cardImageModal); // see loc:66 in js and loc: 108 in html
 }
 
 /**
