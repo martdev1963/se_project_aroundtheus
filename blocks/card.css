@@ -14,6 +14,7 @@
   display: block; /* per code review for removing default inline-block behavior*/
   height: 282px;
   width: 282px;
+  width: 100%;
 }
 
 /* cards__footer contains the elements below it... */
