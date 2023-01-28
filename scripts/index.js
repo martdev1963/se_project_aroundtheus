@@ -49,7 +49,7 @@ const profileJobInput = document.querySelector("#profile-job-input");
 const profileEditForm = document.querySelector("#profile-edit-form");
 
 // card
-const cardAddModal = document.querySelector("#card-add-modal");
+const cardAddModal = document.querySelector("#card-add-modal"); // loc:83 html element
 const cardCloseButton = cardAddModal.querySelector("#card-add-close"); //selecting child from parent container
 const cardAddButton = document.querySelector("#profile-button"); // loc:43 in profile <section> html
 const cardTitle = document.querySelector("#card-title"); // h2 element in template
@@ -167,6 +167,7 @@ profileEditButton.addEventListener("click", () => {
 });
 
 cardAddButton.addEventListener("click", () => {
+  // for adding new card with image and title
   openPopUp(cardAddModal); // opens the form loc:83 in html file
 });
 
