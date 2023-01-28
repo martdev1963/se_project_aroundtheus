@@ -107,11 +107,7 @@ function getCardView(cardData) {
     cardHeartLikeButton.classList.toggle("card__heart_LikeButton_active");
   });
 
-  cardDeleteButton.addEventListener("click", () => {
-    // loc:102 variable assigned to class not id
-    deleteCard(cardData); // function definition: loc:92
-    console.log("even listenser triggered! ");
-  });
+  cardDeleteButton.addEventListener("click", deleteCard); // delete card by clicking delete icon.
 
   cardImageElement.addEventListener("click", () => {
     // const cardImageElement representing the .card__image loc:99 js - loc:122 html
@@ -133,7 +129,7 @@ function getCardView(cardData) {
 
 function handleProfileEditSubmit(e) {
   e.preventDefault();
-  profileName.textContent = profileNameInput.ariaValueMax;
+  profileName.textContent = profileNameInput.value;
   profileJobTitle.textContent = profileJobInput.value;
   closePopUp(profileEditModal);
 }
