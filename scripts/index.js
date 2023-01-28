@@ -76,6 +76,7 @@ const cardImageModalClose = document.querySelector("#card-image-close");
 
 function closePopUp(popUp) {
   profileEditModal.classList.remove("modal_opened"); // removes boolean modifier class from the box modal
+  console.log("called on clicking card-image-close");
 }
 
 function openPopUp(popUp) {

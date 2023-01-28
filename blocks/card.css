@@ -38,17 +38,36 @@
 /*this is a button in the shape of a heart */
 .card__heart {
   background: transparent url(../images/heart.svg) center no-repeat;
-  background-color: rgba(0, 0, 0, 0);
+  width: 21px;
+  height: 18px;
+  /*background-color: rgba(0, 0, 0, 0);*/
   border: none;
-  padding: 0;
+  padding: 15px;
   margin-right: 20px;
   cursor: pointer; /* percode review */
 }
 
-.card__heart_LikeButton_active {
-  background: url(../images/heart-active.svg);
+.card__heart:hover {
+  /*opacity: 0.5;*/
 }
 
-.card__heart:hover {
-  opacity: 0.5;
+.card__heart_LikeButton_active {
+  background: transparent url(../images/heart-active.svg) center no-repeat;
+  width: 21px;
+  height: 18px;
+  border: none;
+  padding: 15px;
+  margin-right: 20px;
+  cursor: pointer; /* percode review */
+}
+
+/*must code the .card__delete-button for the template */
+
+.card__delete-button {
+  background: transparent url(../images/trash-icon.svg) center no-repeat;
+}
+
+#card-delete-button {
+  top: 110px;
+  left: 190px;
 }
