@@ -10,6 +10,7 @@
   display: flex;
   display: none;
   padding: 0 19px;
+  border: none; /* per code review */
 }
 
 .modal_opened {
@@ -27,6 +28,7 @@
   width: 430px;
   height: 330px;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  border: none; /* per code review */
 }
 
 .modal__image-card {
@@ -73,8 +75,24 @@
   margin-top: 54px;
 }
 
+.modal__form-input {
+  border: none;
+  border-bottom: 1px solid #000000;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 17px;
+}
+
 .form__input {
   margin-bottom: 57.08px;
+  border: none; /* per code review */
+  border-top: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #000000;
 }
 
 .modal__button {

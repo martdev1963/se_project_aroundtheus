@@ -68,11 +68,12 @@
 }
 
 .card__delete-button {
-  width: 20px;
+  width: 18px;
   height: 20px;
   background: transparent url(../images/trash-icon.svg) center no-repeat;
   position: absolute; /* typical setting for a child element */
-  top: 20px;
-  right: 20px;
+  top: 36px;
+  left: calc(100% - 33px); /* adjusted positioning per code review */
   border: 0;
+  cursor: pointer;
 }
