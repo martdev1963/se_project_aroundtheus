@@ -199,9 +199,7 @@ initialCards.forEach((cardData) => {
   renderCard(cardView, cardListElement);
 });
 
-// passing an anonymous function as 2nd parameter to addEventListener using arrow notation...
-profileEditButton.addEventListener("click", () => {
-  profileEditModal.classList.add("modal_opened"); // adds boolean modifier class to the box modal, making it dynamically appear...
-});
+// using openPopUp function everytime I want to open a popup per code review.
+profileEditButton.addEventListener("click", openPopUp);
 
 profileCloseButton.addEventListener("click", closePopUp); // call closePopUp() function upon clicking modalCloseButton...
