@@ -163,14 +163,14 @@ function handleCardImageModal(cardData) {
  * -----------------------
  */
 
-profileEditButton.addEventListener("click", fillProfileForm);
+profileEditButton.addEventListener("click", fillProfileForm); // solves bug on 'reading add' for undifined element
 
 cardAddButton.addEventListener("click", () => {
   // for adding new card with image and title
   openPopUp(cardAddModal); // opens the form loc:83 in html file
 });
 
-profileCloseButton.addEventListener("click", closeProfileEditModal);
+profileCloseButton.addEventListener("click", closeProfileEditModal); // solves bug on 'reading remove' for undifined element
 
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
@@ -198,8 +198,3 @@ initialCards.forEach((cardData) => {
   const cardView = getCardView(cardData);
   renderCard(cardView, cardListElement);
 });
-
-// using openPopUp function everytime I want to open a popup per code review.
-profileEditButton.addEventListener("click", openPopUp);
-
-profileCloseButton.addEventListener("click", closePopUp); // call closePopUp() function upon clicking modalCloseButton...
