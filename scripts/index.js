@@ -4,30 +4,31 @@
  * ---------------------------
  */
 const initialCards = [
-  (yosemiteObj = {
+  // got rid of the variables per code review
+  {
     name: "Yosemite Valley",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
-  }),
-  (lakeLouiseObj = {
+  },
+  {
     name: "Lake Louise",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lake-louise.jpg",
-  }),
-  (baldMountainsObj = {
+  },
+  {
     name: "Bald Mountains",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/bald-mountains.jpg",
-  }),
-  (LatemarObj = {
+  },
+  {
     name: "Latemar",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/latemar.jpg",
-  }),
-  (vanoiseNationalParkObj = {
+  },
+  {
     name: "Vanoise National Park",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/vanoise.jpg",
-  }),
-  (lagoDiBraiesObj = {
+  },
+  {
     name: "Lago di Braies",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lago.jpg",
-  }),
+  },
 ];
 
 /**
@@ -58,7 +59,7 @@ const cardTitleInput = document.querySelector("#card-title-input");
 const cardImageInput = document.querySelector("#card-image-input");
 const cardListElement = document.querySelector(".cards__list"); // <ul class="cards__list"> populated dynamically
 
-// extract content from <template> look at function  getCardView(cardData) definition @ loc:95
+// extract content from <template> look at function  getCardView(cardData) definition @ loc:96
 const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
 
@@ -77,7 +78,6 @@ const cardImageModalClose = document.querySelector("#card-image-close");
 function closePopUp(popUp) {
   // uses the parameter popUp, making it more transparent and not for just one specific element.
   popUp.classList.remove("modal_opened"); // removes boolean modifier class from the box modal
-  console.log("called on clicking card-image-close");
 }
 
 function openPopUp(popUp) {
@@ -91,7 +91,6 @@ function renderCard(cardElement, container) {
 
 function deleteCard(e) {
   e.target.closest(".card").remove();
-  console.log("function called from loc:110 event listener! ");
 }
 
 function getCardView(cardData) {
@@ -121,6 +120,18 @@ function getCardView(cardData) {
   return cardElement; // return cardElement which is a clone of the cardTemplate
 }
 
+// function declaration per code review 'Could be improved'
+function closeProfileEditModal() {
+  closePopUp(profileEditModal);
+}
+
+// created function per code review
+function fillProfileForm() {
+  profileNameInput.value = profileName.textContent;
+  profileJobInput.value = profileJobTitle.textContent;
+  openPopUp(profileEditModal); // profileEditModal, variable element for loc:57 in html (close form)
+}
+
 /**
  * -----------------------
  *     Event Handlers
@@ -132,14 +143,6 @@ function handleProfileEditSubmit(e) {
   profileName.textContent = profileNameInput.value;
   profileJobTitle.textContent = profileJobInput.value;
   closePopUp(profileEditModal);
-}
-
-function handleCardAddSubmit(e) {
-  e.preventDefault();
-  cardTitle.textContent = cardTitleInput.value; // cardTitle variable declared in loc:54
-  cardImage.src = cardImageInput.value; // cardImage variable declared in loc:55
-  cardImage.alt = cardImageInput.value;
-  closePopUp(cardAddModal); // close the form element loc:83 in html file declared in loc:52 in js file
 }
 
 function deleteCard(e) {
@@ -160,20 +163,14 @@ function handleCardImageModal(cardData) {
  * -----------------------
  */
 
-profileEditButton.addEventListener("click", () => {
-  profileNameInput.value = profileName.textContent;
-  profileJobInput.value = profileJobTitle.textContent;
-  openPopUp(profileEditModal);
-});
+profileEditButton.addEventListener("click", fillProfileForm);
 
 cardAddButton.addEventListener("click", () => {
   // for adding new card with image and title
   openPopUp(cardAddModal); // opens the form loc:83 in html file
 });
 
-profileCloseButton.addEventListener("click", () => {
-  closePopUp(profileEditModal); // profileEditModal, variable element for loc:57 in html (close form)
-});
+profileCloseButton.addEventListener("click", closeProfileEditModal);
 
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
