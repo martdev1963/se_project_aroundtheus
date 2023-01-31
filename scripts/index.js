@@ -89,24 +89,17 @@ function renderCard(cardElement, container) {
   container.prepend(cardElement);
 }
 
-function deleteCard(e) {
-  e.target.closest(".card").remove();
-}
-
 function getCardView(cardData) {
   // refer to loc: 61 cardTemplate variable...
   const cardElement = cardTemplate.cloneNode(true);
   const cardImageElement = cardElement.querySelector(".card__image"); // load cardElement with all data
   const cardTitleElement = cardElement.querySelector(".card__caption");
   const cardHeartLikeButton = cardElement.querySelector(".card__heart");
-  const cardDeleteButton = cardElement.querySelector(".card__delete-button");
 
   /* ---- function getCardView() Event Listeners Begin ---- */
   cardHeartLikeButton.addEventListener("click", () => {
     cardHeartLikeButton.classList.toggle("card__heart_LikeButton_active");
   });
-
-  cardDeleteButton.addEventListener("click", deleteCard); // delete card by clicking delete icon.
 
   cardImageElement.addEventListener("click", () => {
     // const cardImageElement representing the .card__image loc:99 js - loc:122 html
@@ -158,10 +151,6 @@ function handleProfileEditSubmit(e) {
   profileName.textContent = profileNameInput.value;
   profileJobTitle.textContent = profileJobInput.value;
   closePopUp(profileEditModal);
-}
-
-function deleteCard(e) {
-  e.target.closest(".card").remove();
 }
 
 function handleCardImageModal(cardData) {
