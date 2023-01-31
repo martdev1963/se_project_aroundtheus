@@ -93,6 +93,11 @@
   border-left: none;
   border-right: none;
   border-bottom: 1px solid #000000;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 17px;
 }
 
 .modal__button {
