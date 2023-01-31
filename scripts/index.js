@@ -120,15 +120,30 @@ function getCardView(cardData) {
   return cardElement; // return cardElement which is a clone of the cardTemplate
 }
 
-// function declaration per code review 'Could be improved'
+// function for adding a card - per code review
+function addCard(e) {
+  e.preventDefault();
+  const name = e.target.title.value;
+  const link = e.target.title.value;
+  const cardView = getCardView({ name, link });
+  renderCard(cardView, cardListElement); // place card data into <ul> element
+  closePopUp(cardAddModal);
+  cardAddForm.reset();
+}
+
+// function declaration per code review with 'Could be improved' status
 function closeProfileEditModal() {
   closePopUp(profileEditModal);
 }
 
-// created function per code review
+// created function to perform just one task per code review
 function fillProfileForm() {
   profileNameInput.value = profileName.textContent;
   profileJobInput.value = profileJobTitle.textContent;
+}
+
+function openProfileForm() {
+  fillProfileForm(); // fill the profile form fields
   openPopUp(profileEditModal); // profileEditModal, variable element for loc:57 in html (close form)
 }
 
@@ -163,7 +178,7 @@ function handleCardImageModal(cardData) {
  * -----------------------
  */
 
-profileEditButton.addEventListener("click", fillProfileForm); // solves bug on 'reading add' for undifined element
+profileEditButton.addEventListener("click", openProfileForm); // solves bug on 'reading add' for undifined element
 
 cardAddButton.addEventListener("click", () => {
   // for adding new card with image and title
@@ -182,17 +197,7 @@ cardImageModalClose.addEventListener("click", () => {
   closePopUp(cardImageModal);
 });
 
-cardAddForm.addEventListener("submit", (e) => {
-  //"#card-add-form" loc:87 in html
-  // variable declared at loc:64 in js file
-  e.preventDefault();
-  const name = e.target.title.value;
-  const link = e.target.link.value;
-  const cardView = getCardView({ name, link }); // see loc:93 in js file... cardView contains cardElement.
-  renderCard(cardView, cardListElement); // see loc:84 for renderCard() function definition
-  closePopUp(cardAddModal);
-  cardAddForm.reset(); // zero out the form fields.
-}); // render the card in the <ul> element dynamically...
+cardAddForm.addEventListener("submit", addCard); // render the card in the <ul> element dynamically...
 
 initialCards.forEach((cardData) => {
   const cardView = getCardView(cardData);
