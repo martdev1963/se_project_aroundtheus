@@ -89,17 +89,24 @@ function renderCard(cardElement, container) {
   container.prepend(cardElement);
 }
 
+// See LOC:109
+function deleteCard(e) {
+  e.target.closest(".card").remove(); // delete's card starting from last card
+}
+
 function getCardView(cardData) {
   // refer to loc: 61 cardTemplate variable...
   const cardElement = cardTemplate.cloneNode(true);
   const cardImageElement = cardElement.querySelector(".card__image"); // load cardElement with all data
   const cardTitleElement = cardElement.querySelector(".card__caption");
   const cardHeartLikeButton = cardElement.querySelector(".card__heart");
-
+  const cardTrashButton = cardElement.querySelector("#card-Trash-button");
   /* ---- function getCardView() Event Listeners Begin ---- */
   cardHeartLikeButton.addEventListener("click", () => {
     cardHeartLikeButton.classList.toggle("card__heart_LikeButton_active");
   });
+
+  cardTrashButton.addEventListener("click", deleteCard); // see LOC:93
 
   cardImageElement.addEventListener("click", () => {
     // const cardImageElement representing the .card__image loc:99 js - loc:122 html
@@ -111,7 +118,7 @@ function getCardView(cardData) {
   cardImageElement.alt = cardData.name;
   cardTitleElement.textContent = cardData.name;
   return cardElement; // return cardElement which is a clone of the cardTemplate
-}
+} // * getCardView() function definition END *
 
 // function for adding a card - per code review
 function addCard(e) {

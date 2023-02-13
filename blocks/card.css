@@ -72,3 +72,19 @@
 .card__heart_LikeButton_active:hover {
   opacity: 0.5;
 }
+
+.card__Trash-button {
+  background: transparent url(../images/Trash.svg) center no-repeat;
+  width: 18px;
+  height: 19.3px;
+  cursor: pointer;
+  border: none;
+  position: relative;
+  top: 36px;
+  left: 250.28px;
+  /*left: calc(100% -33px);*/
+}
+
+.card__Trash-button:hover {
+  opacity: 0.5;
+}
