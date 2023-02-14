@@ -93,7 +93,7 @@
   line-height: 17px;
 }
 
-.form__input {
+.modal__input {
   margin-bottom: 57.08px;
   border: none; /* per code review */
   border-bottom: 1px solid #000000;
