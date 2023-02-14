@@ -8,7 +8,7 @@
   right: 0;
   z-index: 999;
   display: flex;
-  visibility: hidden;
+  visibility: hidden; /* display: none; doesn't work with transition property */
   padding: 0 19px;
   border: none; /* per code review */
   opacity: 0;
@@ -132,6 +132,15 @@
 }
 
 @media screen and (min-width: 320px) and (max-width: 700px) {
+  .modal__container {
+    max-height: 300px;
+    max-width: 100%;
+  }
+
+  .modal__image-card {
+    max-width: 100%;
+  }
+
   .modal__heading {
     font-size: 18px;
     line-height: 22px;
@@ -140,7 +149,7 @@
   .modal__close {
     width: 26px;
     height: 26px;
-    left: calc(100% - 30px);
+    left: calc(100% - 130px);
     margin-bottom: 13px;
   }
 
