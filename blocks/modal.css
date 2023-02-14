@@ -96,10 +96,6 @@
 .form__input {
   margin-bottom: 57.08px;
   border: none; /* per code review */
-  border-top: none;
-  border-top: none;
-  border-left: none;
-  border-right: none;
   border-bottom: 1px solid #000000;
   font-family: "Inter", Arial, sans-serif;
   font-size: 14px;
