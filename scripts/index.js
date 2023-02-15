@@ -124,7 +124,7 @@ function getCardView(cardData) {
 function addCard(e) {
   e.preventDefault();
   const name = e.target.title.value;
-  const link = e.target.title.value;
+  const link = e.target.link.value;
   const cardView = getCardView({ name, link });
   renderCard(cardView, cardListElement); // place card data into <ul> element
   closePopUp(cardAddModal);
