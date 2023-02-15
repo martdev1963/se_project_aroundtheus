@@ -39,35 +39,35 @@ const initialCards = [
  */
 
 // profile
-const profileEditButton = document.querySelector("#profile-edit-button");
-const profileEditModal = document.querySelector("#profile-edit-modal");
+const profileEditButton = document.querySelector("#profile-edit-button"); // loc:35 in html loc:177 in js
+const profileEditModal = document.querySelector("#profile-edit-modal"); // the popup for editing profile loc:58 in html
 //const modalCloseButton = document.querySelector("#modal-close-button");
-const profileCloseButton = document.querySelector("#modal-close-button");
+const profileCloseButton = document.querySelector("#modal-close-button"); // loc:60 in html
 const profileName = document.querySelector("#profile-name");
 const profileJobTitle = document.querySelector("#profile-job-title");
 const profileNameInput = document.querySelector("#profile-name-input");
 const profileJobInput = document.querySelector("#profile-job-input");
-const profileEditForm = document.querySelector("#profile-edit-form");
+const profileEditForm = document.querySelector("#profile-edit-form"); // loc:64 in html
 
 // card
-const cardAddModal = document.querySelector("#card-add-modal"); // loc:83 html element
-const cardCloseButton = cardAddModal.querySelector("#card-add-close"); //selecting child from parent container
-const cardAddButton = document.querySelector("#profile-button"); // loc:43 in profile <section> html
+const cardAddModal = document.querySelector("#card-add-modal"); // loc:84 html element...the popup for adding a new card
+const cardCloseButton = cardAddModal.querySelector("#card-add-close"); //selecting child:loc:87 from parent container loc:86 in html
+const cardAddButton = document.querySelector("#profile-button"); // loc:44 in profile <section> html...see comment in loc:41 in html
 const cardTitle = document.querySelector("#card-title"); // h2 element in template loc:124
 const cardImage = document.querySelector("#card-image"); // img element in template
 const cardTitleInput = document.querySelector("#card-title-input");
 const cardImageInput = document.querySelector("#card-image-input");
 const cardListElement = document.querySelector(".cards__list"); // <ul class="cards__list"> populated dynamically
 
-// extract content from <template> look at function  getCardView(cardData) definition @ loc:96
+// extract content from <template> look at function getCardView(cardData) definition @ loc:97
 const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
 
-const cardAddForm = cardAddModal.querySelector("#card-add-form"); //selecting child loc:87 from parent container loc:83
-const cardImageModal = document.querySelector("#card-image-modal"); // parent div loc:108 in html
-const modalImage = document.querySelector("#card-modal-image");
-const modalCaption = document.querySelector("#card-modal-caption");
-const cardImageModalClose = document.querySelector("#card-image-close");
+const cardAddForm = cardAddModal.querySelector("#card-add-form"); //selecting child loc:90 from parent container loc:87
+const cardImageModal = document.querySelector("#card-image-modal"); // parent div loc:111 in html the 'blown up' card
+const modalImage = document.querySelector("#card-modal-image"); // loc:114 in html for 'blown up' card
+const modalCaption = document.querySelector("#card-modal-caption"); // loc:115 in html loc:168 in function handleCardImageModal()
+const cardImageModalClose = document.querySelector("#card-image-close"); // loc:116 in html close button for 'blown up' card
 
 /**
  * -----------------
@@ -75,13 +75,14 @@ const cardImageModalClose = document.querySelector("#card-image-close");
  * -----------------
  */
 
+// Both closePopUp() and openPopUp() functions are used to open two different modal forms...the profile edit and the add new card modal
 function closePopUp(popUp) {
   // uses the parameter popUp, making it more transparent and not for just one specific element.
   popUp.classList.remove("modal_opened"); // removes boolean modifier class from the box modal
 }
 
 function openPopUp(popUp) {
-  popUp.classList.add("modal_opened"); // adds boolean modifier class to the box modal
+  popUp.classList.add("modal_opened"); // adds boolean modifier class to the box modal check loc:19 in css: .modal_opened
 }
 
 function renderCard(cardElement, container) {
@@ -164,8 +165,8 @@ function handleCardImageModal(cardData) {
   // link and name properties contained in parameter cardData which represents the card
   modalImage.src = cardData.link;
   modalImage.alt = cardData.name;
-  modalCaption.textContent = cardData.name;
-  openPopUp(cardImageModal); // see loc:66 in js and loc: 108 in html
+  modalCaption.textContent = cardData.name; // loc:68 in js loc:115 in html
+  openPopUp(cardImageModal); // see loc:67 in js and loc: 111 in html
 }
 
 /**
@@ -174,23 +175,28 @@ function handleCardImageModal(cardData) {
  * -----------------------
  */
 
+// pops up profile edit modal form
 profileEditButton.addEventListener("click", openProfileForm); // solves bug on 'reading add' for undifined element
 
+// pops up add new card modal form
 cardAddButton.addEventListener("click", () => {
+  // see loc:44 in html and loc:55 in js for "deceptively" named: #profile-button(BEM) associated with cardAddButton variable
   // for adding new card with image and title
-  openPopUp(cardAddModal); // opens the form loc:83 in html file
+  openPopUp(cardAddModal); // opens the form loc:83 in html
 });
 
 profileCloseButton.addEventListener("click", closeProfileEditModal); // solves bug on 'reading remove' for undifined element
 
-profileEditForm.addEventListener("submit", handleProfileEditSubmit);
+profileEditForm.addEventListener("submit", handleProfileEditSubmit); // calls handleProfileEditSubmit at loc:157 which calls closePopUp(profileEditModal);
 
 cardCloseButton.addEventListener("click", () => {
-  closePopUp(cardAddModal); // closes the form loc:83 in html file
+  closePopUp(cardAddModal); // closes the form loc:85 in html for adding new card
 });
 
+// the button featured in the 'blown up' card...see loc:70 in js & loc:116 in html
 cardImageModalClose.addEventListener("click", () => {
-  closePopUp(cardImageModal);
+  // closes 'blown up' card
+  closePopUp(cardImageModal); // passing the popup modal form...
 });
 
 cardAddForm.addEventListener("submit", addCard); // render the card in the <ul> element dynamically...
