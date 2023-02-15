@@ -53,7 +53,7 @@ const profileEditForm = document.querySelector("#profile-edit-form");
 const cardAddModal = document.querySelector("#card-add-modal"); // loc:83 html element
 const cardCloseButton = cardAddModal.querySelector("#card-add-close"); //selecting child from parent container
 const cardAddButton = document.querySelector("#profile-button"); // loc:43 in profile <section> html
-const cardTitle = document.querySelector("#card-title"); // h2 element in template
+const cardTitle = document.querySelector("#card-title"); // h2 element in template loc:124
 const cardImage = document.querySelector("#card-image"); // img element in template
 const cardTitleInput = document.querySelector("#card-title-input");
 const cardImageInput = document.querySelector("#card-image-input");
@@ -97,7 +97,7 @@ function deleteCard(e) {
 function getCardView(cardData) {
   // refer to loc: 61 cardTemplate variable...
   const cardElement = cardTemplate.cloneNode(true);
-  const cardImageElement = cardElement.querySelector(".card__image"); // load cardElement with all data
+  const cardImageElement = cardElement.querySelector(".card__image"); // load cardElement with all data...these classes belong to the elements in the <template> element
   const cardTitleElement = cardElement.querySelector(".card__caption");
   const cardHeartLikeButton = cardElement.querySelector(".card__heart");
   const cardTrashButton = cardElement.querySelector("#card-Trash-button");
@@ -197,5 +197,19 @@ cardAddForm.addEventListener("submit", addCard); // render the card in the <ul> 
 
 initialCards.forEach((cardData) => {
   const cardView = getCardView(cardData);
+  // find .card__image
+  const imageEl = cardView.querySelector(".card__image");
+  const cardCaption = cardView.querySelector(".card__caption");
+
+  // replace image src
+  //imageEl.src = cardData.link;
+  // replace image alt
+  //imageEl.alt = cardData.name;
+
+  // replace card-title
+  //cardTitle.textContent = cardData.name;
+
+  console.log(imageEl); // for debugging...
+  console.log(cardCaption);
   renderCard(cardView, cardListElement);
 });
