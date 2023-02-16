@@ -50,8 +50,8 @@
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
-  top: 15;
-  right: 15;
+  top: -5;
+  right: -5;
   transition: opacity 0.4s;
 }
 
