@@ -203,19 +203,5 @@ cardAddForm.addEventListener("submit", addCard); // render the card in the <ul> 
 
 initialCards.forEach((cardData) => {
   const cardView = getCardView(cardData);
-  // find .card__image
-  const imageEl = cardView.querySelector(".card__image");
-  const cardCaption = cardView.querySelector(".card__caption");
-
-  // replace image src
-  //imageEl.src = cardData.link;
-  // replace image alt
-  //imageEl.alt = cardData.name;
-
-  // replace card-title
-  //cardTitle.textContent = cardData.name;
-
-  console.log(imageEl); // for debugging...
-  console.log(cardCaption);
   renderCard(cardView, cardListElement);
 });
