@@ -26,6 +26,7 @@
   transition-delay: 0s;
 }
 
+/* parent container of .modal__close (x icon) */
 .modal__container {
   background-color: #fff;
   margin: auto;
@@ -34,14 +35,31 @@
   position: relative;
   width: 430px;
   height: 330px;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  /*box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);*/
   border: none; /* per code review */
+}
+
+.modal__close {
+  width: 40px;
+  height: 40px;
+  background-image: url("../images/CloseIcon.svg");
+  border: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 0;
+  right: 0;
+  /*
+  bottom: calc(100% + 5px);
+  left: calc(100% + 5px);*/
+  transition: opacity 0.4s;
 }
 
 .modal__image-card {
   /* to give the blown up image fixed dimensions loc:110 html */
-  max-width: 800px;
-  max-height: 800px;
+  max-width: 100%;
+  max-height: 540px;
 }
 
 .modal__caption-card {
@@ -55,26 +73,6 @@
   text-align: left;
   padding: 10px 0;
   background-color: transparent;
-}
-
-.modal__close {
-  width: 40px;
-  height: 40px;
-  background-image: url("../images/CloseIcon.svg");
-  border: none;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: absolute;
-  cursor: pointer;
-
-  bottom: calc(
-    100% + 5px
-  ); /* 100% + 5px higher in relation to its container... */
-  left: calc(
-    100% - 55px
-  ); /* 100% + 5px more from the left in relation to its container... */
-  transition: opacity 0.4s;
 }
 
 .modal__close:hover {
@@ -136,11 +134,12 @@
 }
 
 /* x, y coords for <button class="modal__close" id="card-image-close"></button>*/
-/* Targeting this specific button via its id */
+/* Targeting this specific button via its id 
 #card-image-close {
   top: 270px;
   left: 1000px;
 }
+*/
 
 @media screen and (min-width: 320px) and (max-width: 700px) {
   .modal__container {

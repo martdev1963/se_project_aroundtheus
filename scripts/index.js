@@ -185,8 +185,10 @@ cardAddButton.addEventListener("click", () => {
   openPopUp(cardAddModal); // opens the form loc:83 in html
 });
 
+// click event is obviously specific only to mouse and not the enter key.
 profileCloseButton.addEventListener("click", closeProfileEditModal); // solves bug on 'reading remove' for undifined element
 
+//Good coding practice: Submit handlers are added only to form tags with event submit rather than to submit buttons with event click because it also automatically handles Enter presses
 profileEditForm.addEventListener("submit", handleProfileEditSubmit); // calls handleProfileEditSubmit at loc:157 which calls closePopUp(profileEditModal);
 
 cardCloseButton.addEventListener("click", () => {
