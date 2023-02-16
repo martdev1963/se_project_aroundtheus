@@ -136,9 +136,10 @@
 }
 
 /* x, y coords for <button class="modal__close" id="card-image-close"></button>*/
+/* Targeting this specific button via its id */
 #card-image-close {
-  top: 299px;
-  left: 1075px;
+  top: 270px;
+  left: 1000px;
 }
 
 @media screen and (min-width: 320px) and (max-width: 700px) {
