@@ -12,7 +12,7 @@ This web app is made so all the elements are displayed correctly on popular scre
 It allows the user to change the profile name and title.
 This web app allows the user to upload an image of their choice as well as giving the image a title.
 
-**Technologies use**
+**Technologies used**
 HTML
 CSS
 Media Queries
