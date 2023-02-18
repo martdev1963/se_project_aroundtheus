@@ -8,7 +8,9 @@
 
 **Intro**
 
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.
+This web app is made so all the elements are displayed correctly on popular screen sizes.
+It allows the user to change the profile name and title.
+This web app allows the user to upload an image of their choice as well as giving the image a title.
 
 **Technologies use**
 HTML
@@ -16,6 +18,8 @@ CSS
 Media Queries
 JavaScript
 Figma
+VS Code
+Chrome Browser DevTools
 Photo compression/Optimization
 
 **Figma**
