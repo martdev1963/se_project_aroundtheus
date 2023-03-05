@@ -64,7 +64,7 @@ const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
 
 const cardAddForm = cardAddModal.querySelector("#card-add-form"); //selecting child loc:90 from parent container loc:87
-const cardImageModal = document.querySelector("#card-image-modal"); // parent div loc:111 in html the 'blown up' card
+const cardImageModal = document.querySelector("#card-image-modal"); // parent div loc:117 in html the 'blown up' card
 const modalImage = document.querySelector("#card-modal-image"); // loc:114 in html for 'blown up' card
 const modalCaption = document.querySelector("#card-modal-caption"); // loc:115 in html loc:168 in function handleCardImageModal()
 const cardImageModalClose = document.querySelector("#card-image-close"); // loc:116 in html close button for 'blown up' card
@@ -75,14 +75,43 @@ const cardImageModalClose = document.querySelector("#card-image-close"); // loc:
  * -----------------
  */
 
+// PROJECT 6 OVERVIEW | JOSH Video: 38:37 / 55:42
+// handler which calls the isEscEvent() function
+// this is SPRINT 6: STEP 4 "closing popup with Esc"
+
+// keycode for esc key
+const ESC_KEYCODE = 27;
+
+const handleEscUp = (evt) => {
+  evt.preventDefault();
+  isEscEvent(evt, closePopUp);
+};
+
+const isEscEvent = (evt, action) => {
+  const activePopup = document.querySelector(".modal_opened");
+  if (evt.which === ESC_KEYCODE) {
+    action(activePopup);
+    console.log("LOC:94 isEscEvent arrow function code was executed..."); // debugging code...
+    console.log(
+      "Contains all elements in body tag:which are other places where you can click for closing modal",
+      evt.target
+    ); // debugging code...
+  }
+};
+
 // Both closePopUp() and openPopUp() functions are used to open two different modal forms...the profile edit and the add new card modal
 function closePopUp(popUp) {
   // uses the parameter popUp, making it more transparent and not for just one specific element.
   popUp.classList.remove("modal_opened"); // removes boolean modifier class from the box modal
+  /* add code here to remove EvenListener that will be added in loc:88 below in openPopUp()*/
+  document.removeEventListener("keyup", handleEscUp); //this is SPRINT 6: STEP 4 "closing popup with Esc" loc:85
 }
 
 function openPopUp(popUp) {
   popUp.classList.add("modal_opened"); // adds boolean modifier class to the box modal check loc:19 in css: .modal_opened
+  /* add code here for closing modal popup with escape key */
+  //this is SPRINT 6: STEP 4 "closing popup with Esc"
+  document.addEventListener("keyup", handleEscUp); //<------handler function to call...
 }
 
 function renderCard(cardElement, container) {
@@ -146,6 +175,7 @@ function fillProfileForm() {
 function openProfileForm() {
   fillProfileForm(); // fill the profile form fields
   openPopUp(profileEditModal); // profileEditModal, variable element for loc:57 in html (close form)
+  console.log("Edit Form Modal was opened! "); // debugging code...
 }
 
 /**
@@ -166,7 +196,8 @@ function handleCardImageModal(cardData) {
   modalImage.src = cardData.link;
   modalImage.alt = cardData.name;
   modalCaption.textContent = cardData.name; // loc:68 in js loc:115 in html
-  openPopUp(cardImageModal); // see loc:67 in js and loc: 111 in html
+  openPopUp(cardImageModal); // see loc:67 in js and loc: 117 in html
+  console.log("This is the Card Data ", cardData); // debugging code...
 }
 
 /**
