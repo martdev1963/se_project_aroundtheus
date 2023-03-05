@@ -82,9 +82,16 @@ const cardImageModalClose = document.querySelector("#card-image-close"); // loc:
 // keycode for esc key
 const ESC_KEYCODE = 27;
 
+// for clicking on ESC key to close modal forms...
 const handleEscUp = (evt) => {
   evt.preventDefault();
   isEscEvent(evt, closePopUp);
+};
+
+// for clicking/mousedown on Overlay...outside of modal forms to close them...STEP 3
+const handleOverlayClick = (evt) => {
+  evt.preventDefault();
+  isOverlayClicked(evt, closePopUp);
 };
 
 const isEscEvent = (evt, action) => {
@@ -96,6 +103,19 @@ const isEscEvent = (evt, action) => {
       "Contains all elements in body tag:which are other places where you can click for closing modal",
       evt.target
     ); // debugging code...
+  }
+};
+
+const isOverlayClicked = (evt, action) => {
+  const activePopup = document.querySelector(".modal_opened");
+  const main = document.querySelector("main");
+  if (evt.currentTarget === body) {
+    document.querySelector("main").addEventListener("mousedown", () => {
+      console.log(
+        "body'moused down' from isOverlayClicked function loc:109 in index.js...."
+      );
+      action(activePopup);
+    });
   }
 };
 
@@ -222,10 +242,11 @@ profileCloseButton.addEventListener("click", closeProfileEditModal); // solves b
 // code for closing profile Edit modal form if clicked outside of modal form...(profileEditModal) and (cardAddModal)
 profileEditModal.addEventListener("mousedown", (evt) => {
   if (
-    evt.target.classList.contains(".modal") ||
-    evt.target.classList.contains(".modal__container")
+    evt.currentTarget.classList.contains("page") ||
+    evt.currentTarget.classList.contains("page__content")
   ) {
     closeProfileEditModal();
+    console.log("this got fired!!");
   }
 });
 
