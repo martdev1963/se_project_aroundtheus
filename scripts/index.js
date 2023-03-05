@@ -162,7 +162,7 @@ function addCard(e) {
 }
 
 // function declaration per code review with 'Could be improved' status
-function closeProfileEditModal() {
+function closeProfileEditModal(evt) {
   closePopUp(profileEditModal);
 }
 
@@ -217,13 +217,24 @@ cardAddButton.addEventListener("click", () => {
 });
 
 // click event is obviously specific only to mouse and not the enter key.
-profileCloseButton.addEventListener("click", closeProfileEditModal); // solves bug on 'reading remove' for undifined element
+profileCloseButton.addEventListener("click", closeProfileEditModal); // solves bug on 'reading remove' for undifined element. see loc:45 in js file
+
+// code for closing profile Edit modal form if clicked outside of modal form...(profileEditModal) and (cardAddModal)
+profileEditModal.addEventListener("mousedown", (evt) => {
+  if (
+    evt.target.classList.contains(".modal_opened") ||
+    evt.target.classList.contains(".modal_close")
+  ) {
+    closeProfileEditModal();
+  }
+});
 
 //Good coding practice: Submit handlers are added only to form tags with event submit rather than to submit buttons with event click because it also automatically handles Enter presses
-profileEditForm.addEventListener("submit", handleProfileEditSubmit); // calls handleProfileEditSubmit at loc:157 which calls closePopUp(profileEditModal);
+profileEditForm.addEventListener("submit", handleProfileEditSubmit); // calls handleProfileEditSubmit at loc:157 which calls closePopUp(profileEditModal); see loc:43 in js file
 
-cardCloseButton.addEventListener("click", () => {
-  closePopUp(cardAddModal); // closes the form loc:85 in html for adding new card
+cardCloseButton.addEventListener("click", (evt) => {
+  closePopUp(cardAddModal); // closes the form loc:85 in html for adding new card loc:53 js file
+  console.log("cardCloseButton got clicked", evt.target);
 });
 
 // the button featured in the 'blown up' card...see loc:70 in js & loc:116 in html
