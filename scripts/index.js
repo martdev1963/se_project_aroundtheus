@@ -222,8 +222,8 @@ profileCloseButton.addEventListener("click", closeProfileEditModal); // solves b
 // code for closing profile Edit modal form if clicked outside of modal form...(profileEditModal) and (cardAddModal)
 profileEditModal.addEventListener("mousedown", (evt) => {
   if (
-    evt.target.classList.contains(".modal_opened") ||
-    evt.target.classList.contains(".modal_close")
+    evt.target.classList.contains(".modal") ||
+    evt.target.classList.contains(".modal__container")
   ) {
     closeProfileEditModal();
   }

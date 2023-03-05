@@ -73,7 +73,6 @@ function toggleButtonState(
   }
 }
 
-
 function setEventListeners(formElement, validationOptions) {
   const inputElements = Array.from(
     formElement.querySelectorAll(validationOptions.inputSelector)
@@ -91,7 +90,7 @@ function setEventListeners(formElement, validationOptions) {
       toggleButtonState(inputElements, submitButton, validationOptions);
     });
   });
-
+}
 
 // object that contains the validation options...
 const validationOptions = {
