@@ -73,7 +73,7 @@ const cardImageModalClose = document.querySelector("#card-image-close"); // loc:
 
 //code for closing modals by clicking overlay
 //const modalPopups = document.querySelectorAll(".modal");
-//const modalContainerCard = document.querySelectorAll(".modal__container-card");
+const modalContainerCard = document.querySelector(".modal__container-card");
 /**
  * -----------------
  *     Functions
@@ -248,10 +248,10 @@ cardAddModal.addEventListener("mousedown", (evt) => {
 });
 
 // code for closing modalImage #card-modal-image" using 'mousedown' when clicking on Overlay
-cardModalImage.addEventListener("mousedown", (evt) => {
+modalContainerCard.addEventListener("mousedown", (evt) => {
   if (evt.currentTarget.classList.contains("modal")) {
-    closePopUp(cardModalImage);
-    console.log("cardModalImage eventlistener got called!");
+    closePopUp(modalContainerCard);
+    console.log("modalContainerCard eventlistener got called!");
   }
 });
 
