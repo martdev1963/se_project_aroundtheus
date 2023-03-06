@@ -18,9 +18,9 @@
 
 /* parent container of .modal__close (x icon) */
 /*associated html loc:113 which contains modal__close button loc:116  loc:49 css*/
-.modal__container-card {
+/*.modal__container-card {
   position: relative;
-}
+}*/
 
 .modal__container {
   background-color: #fff;
@@ -45,6 +45,10 @@
   transition-delay: 0s;
 }
 
+#card-image-modal {
+  position: relative;
+}
+
 /* x icon for closing modal */
 .modal__close {
   width: 40px;
@@ -56,14 +60,17 @@
   background-size: contain;
   position: absolute;
   transition: opacity 0.4s;
-  bottom: calc(100% + 5px);
-  left: calc(100% + 5px);
+  bottom: calc(100% + -45px);
+  left: calc(100% + -325px);
 }
 
 .modal__image-card {
   /* to give the blown up image fixed dimensions loc:110 html */
   max-width: 100%;
   max-height: 540px;
+  position: absolute;
+  top: 50px;
+  left: 200px;
 }
 
 .modal__caption-card {
@@ -76,6 +83,7 @@
   margin: auto;
   text-align: left;
   padding: 10px 0;
+  position: absolute;
   background-color: transparent;
 }
 
