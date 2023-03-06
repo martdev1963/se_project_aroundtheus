@@ -69,6 +69,9 @@ const modalImage = document.querySelector("#card-modal-image"); // loc:114 in ht
 const modalCaption = document.querySelector("#card-modal-caption"); // loc:115 in html loc:168 in function handleCardImageModal()
 const cardImageModalClose = document.querySelector("#card-image-close"); // loc:116 in html close button for 'blown up' card
 
+//code for closing modals by clicking overlay
+const modalPopups = document.querySelectorAll(".modal");
+
 /**
  * -----------------
  *     Functions
@@ -98,24 +101,11 @@ const isEscEvent = (evt, action) => {
   const activePopup = document.querySelector(".modal_opened");
   if (evt.which === ESC_KEYCODE) {
     action(activePopup);
-    console.log("LOC:94 isEscEvent arrow function code was executed..."); // debugging code...
+    console.log("loc:94 isEscEvent arrow function code was executed..."); // debugging code...
     console.log(
       "Contains all elements in body tag:which are other places where you can click for closing modal",
       evt.target
     ); // debugging code...
-  }
-};
-
-const isOverlayClicked = (evt, action) => {
-  const activePopup = document.querySelector(".modal_opened");
-  const main = document.querySelector("main");
-  if (evt.currentTarget === body) {
-    document.querySelector("main").addEventListener("mousedown", () => {
-      console.log(
-        "body'moused down' from isOverlayClicked function loc:109 in index.js...."
-      );
-      action(activePopup);
-    });
   }
 };
 
@@ -242,12 +232,21 @@ profileCloseButton.addEventListener("click", closeProfileEditModal); // solves b
 // code for closing profile Edit modal form if clicked outside of modal form...(profileEditModal) and (cardAddModal)
 profileEditModal.addEventListener("mousedown", (evt) => {
   if (
-    evt.currentTarget.classList.contains("page") ||
+    evt.currentTarget.classList.contains("modal") ||
     evt.currentTarget.classList.contains("page__content")
   ) {
     closeProfileEditModal();
-    console.log("this got fired!!");
+    console.log("function got called!");
   }
+});
+
+// eventlistener to close modals using 'mousedown' (Step 3 of Project) see loc:73 for modalPopups variable declaration...
+modalPopups.forEach((modalPopup) => {
+  modalPopup.addEventListener("mousedown", (evt) => {
+    if (e.target.classList.contains("modal")) {
+      closePopUp(modalPopup);
+    }
+  });
 });
 
 //Good coding practice: Submit handlers are added only to form tags with event submit rather than to submit buttons with event click because it also automatically handles Enter presses
