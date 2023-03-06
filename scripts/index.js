@@ -231,23 +231,23 @@ profileCloseButton.addEventListener("click", closeProfileEditModal); // solves b
 
 // code for closing profile Edit modal form if clicked outside of modal form...(profileEditModal) and (cardAddModal)
 profileEditModal.addEventListener("mousedown", (evt) => {
-  if (
-    evt.currentTarget.classList.contains("modal") ||
-    evt.currentTarget.classList.contains("page__content")
-  ) {
+  if (evt.currentTarget.classList.contains("modal")) {
     closeProfileEditModal();
     console.log("function got called!");
   }
 });
 
 // eventlistener to close modals using 'mousedown' (Step 3 of Project) see loc:73 for modalPopups variable declaration...
-modalPopups.forEach((modalPopup) => {
-  modalPopup.addEventListener("mousedown", (evt) => {
-    if (e.target.classList.contains("modal")) {
-      closePopUp(modalPopup);
-    }
-  });
-});
+//modalPopups.forEach((modalPopup) => {
+//  modalPopup.addEventListener("mousedown", (evt) => {
+//    if (
+//      e.target.classList.contains("modal") ||
+//      e.target.classList.contains("modal__opened")
+//    ) {
+//      closePopUp(modalPopup);
+//    }
+//  });
+//});
 
 //Good coding practice: Submit handlers are added only to form tags with event submit rather than to submit buttons with event click because it also automatically handles Enter presses
 profileEditForm.addEventListener("submit", handleProfileEditSubmit); // calls handleProfileEditSubmit at loc:157 which calls closePopUp(profileEditModal); see loc:43 in js file
