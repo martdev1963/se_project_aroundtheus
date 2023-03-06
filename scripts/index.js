@@ -248,12 +248,12 @@ cardAddModal.addEventListener("mousedown", (evt) => {
 });
 
 // code for closing modalImage #card-modal-image" using 'mousedown' when clicking on Overlay
-//modalContainerCard.addEventListener("mousedown", (evt) => {
-//  if (evt.currentTarget.classList.contains("modal")) {
-//    closePopUp(modalContainerCard);
-//    console.log("modalContainerCard eventlistener got called!");
-//  }
-//});
+cardImageModal.addEventListener("mousedown", (evt) => {
+  if (evt.currentTarget.classList.contains("modal")) {
+    closePopUp(cardImageModal);
+    console.log("cardImageModal eventlistener got called!");
+  }
+});
 
 //Good coding practice: Submit handlers are added only to form tags with event submit rather than to submit buttons with event click because it also automatically handles Enter presses
 profileEditForm.addEventListener("submit", handleProfileEditSubmit); // calls handleProfileEditSubmit at loc:157 which calls closePopUp(profileEditModal); see loc:43 in js file
