@@ -32,10 +32,11 @@
 /*associated html loc:131 which contains modal__close button loc:135  loc:49 css*/
 .modal_container-card {
   position: relative;
-  padding: 366px;
+  /*padding: 366px;*/
   margin: auto;
   width: 430px;
-  height: 330px;
+  height: auto;
+  top: 215px;
 }
 
 /* modifier class */
@@ -60,17 +61,17 @@
   background-size: contain;
   position: absolute;
   transition: opacity 0.4s;
-  top: calc(100% + -1230px);
-  left: calc(100% + -250px);
+  /*top: calc(100% + 5px);
+  left: calc(100% + 5px);
+  /*top: 5px;*/
 }
 
 .modal__image-card {
   /* to give the blown up image fixed dimensions loc:110 html */
   max-width: 100%;
   max-height: 540px;
-  position: absolute;
-  top: -115px;
-  left: 230px;
+  /*position: absolute; */
+  margin: auto;
 }
 
 .modal__caption-card {
