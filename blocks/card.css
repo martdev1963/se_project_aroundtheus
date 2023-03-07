@@ -2,7 +2,7 @@
 .card {
   display: flex;
   flex-direction: column;
-  justify-items: center;
+  justify-content: center;
   width: 282px;
   border-radius: 10px 10px 10px 10px; /* four corners rounded per code review */
   overflow: hidden;
@@ -13,7 +13,6 @@
 .card__image {
   display: block; /* per code review for removing default inline-block behavior*/
   height: 282px;
-  width: 282px;
   width: 100%;
 }
 
@@ -78,9 +77,9 @@
   height: 19.3px;
   cursor: pointer;
   border: none;
-  position: relative;
+  position: absolute;
   top: 36px;
-  left: 250.28px;
+  right: 5.82%;
   /*left: calc(100% -33px);*/
 }
 

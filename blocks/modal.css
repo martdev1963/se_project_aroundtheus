@@ -28,7 +28,7 @@
   border: none; /* per code review */
 }
 
-/* parent container of .modal__close (x icon) */
+/* parent container of .modal__close (x icon) among other children tags */
 /*associated html loc:131 which contains modal__close button loc:135  loc:49 css*/
 .modal_container-card {
   position: relative;
