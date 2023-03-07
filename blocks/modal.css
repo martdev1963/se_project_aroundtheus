@@ -16,12 +16,6 @@
   pointer-events: none;
 }
 
-/* parent container of .modal__close (x icon) */
-/*associated html loc:113 which contains modal__close button loc:116  loc:49 css*/
-/*.modal__container-card {
-  position: relative;
-}*/
-
 .modal__container {
   background-color: #fff;
   margin: auto;
@@ -32,6 +26,16 @@
   height: 330px;
   /*box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);*/
   border: none; /* per code review */
+}
+
+/* parent container of .modal__close (x icon) */
+/*associated html loc:131 which contains modal__close button loc:135  loc:49 css*/
+.modal_container-card {
+  position: relative;
+  padding: 366px;
+  margin: auto;
+  width: 430px;
+  height: 330px;
 }
 
 /* modifier class */
@@ -45,10 +49,6 @@
   transition-delay: 0s;
 }
 
-#card-image-modal {
-  position: relative;
-}
-
 /* x icon for closing modal */
 .modal__close {
   width: 40px;
@@ -60,8 +60,8 @@
   background-size: contain;
   position: absolute;
   transition: opacity 0.4s;
-  bottom: calc(100% + -45px);
-  left: calc(100% + -325px);
+  top: calc(100% + -1230px);
+  left: calc(100% + -250px);
 }
 
 .modal__image-card {
@@ -69,8 +69,8 @@
   max-width: 100%;
   max-height: 540px;
   position: absolute;
-  top: 50px;
-  left: 200px;
+  top: -115px;
+  left: 230px;
 }
 
 .modal__caption-card {
@@ -84,6 +84,8 @@
   text-align: left;
   padding: 10px 0;
   position: absolute;
+  bottom: auto;
+  left: 250px;
   background-color: transparent;
 }
 
