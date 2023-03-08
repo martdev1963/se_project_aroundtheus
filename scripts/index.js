@@ -96,18 +96,13 @@ const handleEscUp = (evt) => {
 // for clicking/mousedown on Overlay...outside of modal forms to close them...STEP 3
 const handleOverlayClick = (evt) => {
   evt.preventDefault();
-  isOverlayClicked(evt, closePopUp);
+  //isOverlayClicked(evt, closePopUp);
 };
 
 const isEscEvent = (evt, action) => {
   const activePopup = document.querySelector(".modal_opened");
   if (evt.which === ESC_KEYCODE) {
     action(activePopup);
-    console.log("loc:94 isEscEvent arrow function code was executed..."); // debugging code...
-    console.log(
-      "Contains all elements in body tag:which are other places where you can click for closing modal",
-      evt.target
-    ); // debugging code...
   }
 };
 
