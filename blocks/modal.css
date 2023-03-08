@@ -15,7 +15,7 @@
   transition: visibility 0s ease 0.6s, opacity 0.6s ease;
   pointer-events: none;
 }
-
+/* modal container for edit-form and new place modals */
 .modal__container {
   background-color: #fff;
   margin: auto;
@@ -28,7 +28,7 @@
   border: none; /* per code review */
 }
 
-/* parent container of .modal__close (x icon) among other children tags */
+/* modifier class just for 'blown-up' card modal. Parent container of .modal__close (x icon) among other children tags */
 /*associated html loc:131 which contains modal__close button loc:135  loc:49 css*/
 .modal_container-card {
   position: relative;
@@ -36,7 +36,7 @@
   margin: auto;
   width: 430px;
   height: auto;
-  top: 215px;
+  top: 115px;
 }
 
 /* modifier class */
@@ -86,7 +86,7 @@
   padding: 10px 0;
   position: absolute;
   bottom: auto;
-  left: 250px;
+  /*left: 250px; this property setting was over-riding the text-align: left; loc:85 */
   background-color: transparent;
 }
 
@@ -152,6 +152,20 @@
 .modal__button:hover {
   opacity: 0.8;
 }
+
+.modal__button:hover:not(:disabled) {
+  /* 1st way */
+  /*disabled button shouldn't have hover state*/
+  /*selects not disabled hovered button*/
+  opacity: 0.8;
+}
+
+/* 2nd way */
+/*this turns on hover*/
+/*.modal__button_disabled:hover {
+  opacity: 1;
+}*/
+
 /* new classes start */
 .modal__error {
   font-weight: 400;
