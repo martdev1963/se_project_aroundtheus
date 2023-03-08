@@ -111,7 +111,7 @@ const isEscEvent = (evt, action) => {
   }
 };
 
-// Both closePopUp() and openPopUp() functions are used to open two different modal forms...the profile edit and the add new card modal
+// Both closePopUp() and openPopUp() functions are used to open/close 3 different modal forms...the profile edit/add new card and cardimage modals
 function closePopUp(popUp) {
   // uses the parameter popUp, making it more transparent and not for just one specific element.
   popUp.classList.remove("modal_opened"); // removes boolean modifier class from the box modal
@@ -179,6 +179,11 @@ function closeProfileEditModal(evt) {
   closePopUp(profileEditModal);
 }
 
+// see loc:271 where this function is called from cardImageModalClose's addEventListener()
+function closeCardImageModal(evt) {
+  closePopUp(cardImageModal);
+}
+
 // created function to perform just one task per code review
 function fillProfileForm() {
   profileNameInput.value = profileName.textContent;
@@ -232,29 +237,27 @@ cardAddButton.addEventListener("click", () => {
 // click event is obviously specific only to mouse and not the enter key.
 profileCloseButton.addEventListener("click", closeProfileEditModal); // solves bug on 'reading remove' for undifined element. see loc:45 in js file
 
-// code for closing profile Edit modal form if clicked outside of modal form...(profileEditModal) "#profile-edit-modal"
-profileEditModal.addEventListener("mousedown", (evt) => {
-  if (evt.currentTarget.classList.contains("modal")) {
-    closeProfileEditModal();
-    console.log("profileEditModal eventlistener got called!");
+// General 'mousedown' function handler for closing any modal
+function closeModalOnRemoteClick(evt) {
+  // target is the element on which the event happened
+  // currentTarget is the modal
+  // if they are the same then we should close the modal
+  if (
+    evt.target === evt.currentTarget ||
+    evt.target.classList.contains("modal__close")
+  ) {
+    closePopUp(evt.target);
   }
-});
+}
+
+// code for closing profile Edit modal form if clicked outside of modal form...(profileEditModal)
+profileEditModal.addEventListener("mousedown", closeModalOnRemoteClick);
 
 // code for closing cardAddModal "#card-add-modal" using 'mousedown' when clicking on Overlay
-cardAddModal.addEventListener("mousedown", (evt) => {
-  if (evt.currentTarget.classList.contains("modal")) {
-    closePopUp(cardAddModal);
-    console.log("cardAddModal eventlistener got called!");
-  }
-});
+cardAddModal.addEventListener("mousedown", closeModalOnRemoteClick);
 
-// code for closing modalImage #card-modal-image" using 'mousedown' when clicking on Overlay
-cardImageModal.addEventListener("mousedown", (evt) => {
-  if (evt.currentTarget.classList.contains("modal")) {
-    closePopUp(cardImageModal);
-    console.log("cardImageModal eventlistener got called!");
-  }
-});
+// code for closing modalImage #card-modal-image" (blown-up card image) using 'mousedown'
+cardImageModal.addEventListener("mousedown", closeModalOnRemoteClick);
 
 //Good coding practice: Submit handlers are added only to form tags with event submit rather than to submit buttons with event click because it also automatically handles Enter presses
 profileEditForm.addEventListener("submit", handleProfileEditSubmit); // calls handleProfileEditSubmit at loc:157 which calls closePopUp(profileEditModal); see loc:43 in js file
@@ -264,11 +267,8 @@ cardCloseButton.addEventListener("click", (evt) => {
   console.log("cardCloseButton got clicked", evt.target);
 });
 
-// the button featured in the 'blown up' card...see loc:70 in js & loc:116 in html
-cardImageModalClose.addEventListener("click", () => {
-  // closes 'blown up' card
-  closePopUp(cardImageModal); // passing the popup modal form...
-});
+// see loc:182 for closeCardImageModal() function definition
+cardImageModalClose.addEventListener("click", closeCardImageModal);
 
 cardAddForm.addEventListener("submit", addCard); // render the card in the <ul> element dynamically...
 
