@@ -171,6 +171,7 @@ function addCard(e) {
   renderCard(cardView, cardListElement); // place card data into <ul> element
   closePopUp(cardAddModal);
   cardAddForm.reset();
+  toggleButtonState(inputElements, submitButton, validationOptions); //call toggleButtonState() to disable submit button
 }
 
 // function declaration per code review with 'Could be improved' status

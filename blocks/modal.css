@@ -64,6 +64,8 @@
   /*top: calc(100% + 5px);
   left: calc(100% + 5px);
   /*top: 5px;*/
+  right: -35px;
+  top: -35px;
 }
 
 .modal__image-card {
@@ -136,6 +138,7 @@
   line-height: 17px;
 }
 
+/*Save and Create modal buttons*/
 .modal__button {
   height: 50px;
   line-height: 22px;
@@ -163,8 +166,8 @@
 /* 2nd way */
 /*this turns on hover*/
 /*.modal__button_disabled:hover {
-  opacity: 1;
-}*/
+  /*opacity: 1;
+/*}*/
 
 /* new classes start */
 .modal__error {
