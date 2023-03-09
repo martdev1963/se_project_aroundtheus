@@ -39,24 +39,24 @@ const initialCards = [
  */
 
 // profile
-const profileEditButton = document.querySelector("#profile-edit-button"); // loc:35 in html loc:177 in js
-const profileEditModal = document.querySelector("#profile-edit-modal"); // the popup for editing profile loc:58 in html
-const profileCloseButton = document.querySelector("#modal-close-button"); // loc:60 in html
+const profileEditButton = document.querySelector("#profile-edit-button");
+const profileEditModal = document.querySelector("#profile-edit-modal");
+const profileCloseButton = document.querySelector("#modal-close-button");
 const profileName = document.querySelector("#profile-name");
 const profileJobTitle = document.querySelector("#profile-job-title");
 const profileNameInput = document.querySelector("#profile-name-input");
 const profileJobInput = document.querySelector("#profile-job-input");
-const profileEditForm = document.querySelector("#profile-edit-form"); // loc:64 in html
+const profileEditForm = document.querySelector("#profile-edit-form");
 
 // card
-const cardAddModal = document.querySelector("#card-add-modal"); // loc:84 html element...the popup for adding a new card
-const cardCloseButton = cardAddModal.querySelector("#card-add-close"); //selecting child:loc:91 from parent container loc:64 in html
-const cardAddButton = document.querySelector("#profile-button"); // loc:44 in profile <section> html...see comment in loc:41 in html
-const cardTitle = document.querySelector("#card-title"); // h2 element in template loc:124
-const cardImage = document.querySelector("#card-image"); // img element in template
+const cardAddModal = document.querySelector("#card-add-modal");
+const cardCloseButton = cardAddModal.querySelector("#card-add-close");
+const cardAddButton = document.querySelector("#profile-button");
+const cardTitle = document.querySelector("#card-title");
+const cardImage = document.querySelector("#card-image");
 const cardTitleInput = document.querySelector("#card-title-input");
 const cardImageInput = document.querySelector("#card-image-input");
-const cardListElement = document.querySelector(".cards__list"); // <ul class="cards__list"> populated dynamically
+const cardListElement = document.querySelector(".cards__list");
 
 const cardModalImage = document.querySelector("#card-modal-image");
 
@@ -64,14 +64,14 @@ const cardModalImage = document.querySelector("#card-modal-image");
 const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
 
-const cardAddForm = cardAddModal.querySelector("#card-add-form"); //selecting child loc:90 from parent container loc:87
-const cardImageModal = document.querySelector("#card-image-modal"); // parent div loc:117 in html the 'blown up' card
-const modalImage = document.querySelector("#card-modal-image"); // loc:114 in html for 'blown up' card
-const modalCaption = document.querySelector("#card-modal-caption"); // loc:115 in html loc:168 in function handleCardImageModal()
-const cardImageModalClose = document.querySelector("#card-image-close"); // loc:116 in html close button for 'blown up' card
+const cardAddForm = cardAddModal.querySelector("#card-add-form");
+const cardImageModal = document.querySelector("#card-image-modal");
+const modalImage = document.querySelector("#card-modal-image");
+const modalCaption = document.querySelector("#card-modal-caption");
+const cardImageModalClose = document.querySelector("#card-image-close");
 
 //code for closing modals by clicking overlay
-//const modalPopups = document.querySelectorAll(".modal");
+const modalPopups = document.querySelectorAll(".modal");
 const modalContainerCard = document.querySelector(".modal__container-card");
 /**
  * -----------------
@@ -86,29 +86,26 @@ const ESC_KEYCODE = 27;
 const handleEscUp = (evt) => {
   evt.preventDefault();
   const activePopup = document.querySelector(".modal_opened");
-  if (evt.which === ESC_KEYCODE) {
-    closePopUp(activePopup);
+  if (activePopup) {
+    if (evt.which === ESC_KEYCODE) {
+      closePopUp(activePopup);
+    }
   }
 };
 
 // for clicking/mousedown on Overlay...outside of modal forms to close them...STEP 3
 const handleOverlayClick = (evt) => {
   evt.preventDefault();
-  //isOverlayClicked(evt, closePopUp);
 };
 
 function closePopUp(popUp) {
-  // uses the parameter popUp, making it more transparent and not for just one specific element.
   popUp.classList.remove("modal_opened"); // removes boolean modifier class from the box modal
-  /* add code here to remove EvenListener that will be added in loc:88 below in openPopUp()*/
-  document.removeEventListener("keyup", handleEscUp); //this is SPRINT 6: STEP 4 "closing popup with Esc" loc:85
+  document.removeEventListener("keyup", handleEscUp); // use esc key
 }
 
 function openPopUp(popUp) {
   popUp.classList.add("modal_opened"); // adds boolean modifier class to the box modal check loc:19 in css: .modal_opened
-  /* add code here for closing modal popup with escape key */
-  //this is SPRINT 6: STEP 4 "closing popup with Esc"
-  document.addEventListener("keyup", handleEscUp); //<------handler function to call...
+  document.addEventListener("keyup", handleEscUp);
 }
 
 function renderCard(cardElement, container) {
@@ -211,8 +208,6 @@ profileEditButton.addEventListener("click", openProfileForm); // solves bug on '
 
 // pops up add new card modal form
 cardAddButton.addEventListener("click", () => {
-  // see loc:44 in html and loc:55 in js for "deceptively" named: #profile-button(BEM) associated with cardAddButton variable
-  // for adding new card with image and title
   openPopUp(cardAddModal); // opens the form loc:83 in html
 });
 
