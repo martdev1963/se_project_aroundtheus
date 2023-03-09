@@ -41,7 +41,6 @@ const initialCards = [
 // profile
 const profileEditButton = document.querySelector("#profile-edit-button"); // loc:35 in html loc:177 in js
 const profileEditModal = document.querySelector("#profile-edit-modal"); // the popup for editing profile loc:58 in html
-//const modalCloseButton = document.querySelector("#modal-close-button");
 const profileCloseButton = document.querySelector("#modal-close-button"); // loc:60 in html
 const profileName = document.querySelector("#profile-name");
 const profileJobTitle = document.querySelector("#profile-job-title");
@@ -51,7 +50,7 @@ const profileEditForm = document.querySelector("#profile-edit-form"); // loc:64 
 
 // card
 const cardAddModal = document.querySelector("#card-add-modal"); // loc:84 html element...the popup for adding a new card
-const cardCloseButton = cardAddModal.querySelector("#card-add-close"); //selecting child:loc:87 from parent container loc:86 in html
+const cardCloseButton = cardAddModal.querySelector("#card-add-close"); //selecting child:loc:91 from parent container loc:64 in html
 const cardAddButton = document.querySelector("#profile-button"); // loc:44 in profile <section> html...see comment in loc:41 in html
 const cardTitle = document.querySelector("#card-title"); // h2 element in template loc:124
 const cardImage = document.querySelector("#card-image"); // img element in template
@@ -223,8 +222,7 @@ cardAddButton.addEventListener("click", () => {
   openPopUp(cardAddModal); // opens the form loc:83 in html
 });
 
-// click event is obviously specific only to mouse and not the enter key.
-profileCloseButton.addEventListener("click", closeProfileEditModal); // solves bug on 'reading remove' for undifined element. see loc:45 in js file
+profileCloseButton.addEventListener("click", closeProfileEditModal);
 
 // General 'mousedown' function handler for closing any modal
 function closeModalOnRemoteClick(evt) {
