@@ -219,6 +219,7 @@ cardAddButton.addEventListener("click", () => {
 profileCloseButton.addEventListener("click", closeProfileEditModal);
 
 // General 'mousedown' function handler for closing any modal
+
 function closeModalOnRemoteClick(evt) {
   if (
     evt.target === evt.currentTarget ||
