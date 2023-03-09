@@ -88,22 +88,18 @@ const modalContainerCard = document.querySelector(".modal__container-card");
 const ESC_KEYCODE = 27;
 
 // for clicking on ESC key to close modal forms...
-const handleEscUp = (evt) => {
+const handleEscUp = (evt, action) => {
   evt.preventDefault();
-  isEscEvent(evt, closePopUp);
+  const activePopup = document.querySelector(".modal_opened");
+  if (evt.which === ESC_KEYCODE) {
+    action(activePopup);
+  }
 };
 
 // for clicking/mousedown on Overlay...outside of modal forms to close them...STEP 3
 const handleOverlayClick = (evt) => {
   evt.preventDefault();
   //isOverlayClicked(evt, closePopUp);
-};
-
-const isEscEvent = (evt, action) => {
-  const activePopup = document.querySelector(".modal_opened");
-  if (evt.which === ESC_KEYCODE) {
-    action(activePopup);
-  }
 };
 
 // Both closePopUp() and openPopUp() functions are used to open/close 3 different modal forms...the profile edit/add new card and cardimage modals
@@ -188,7 +184,6 @@ function fillProfileForm() {
 function openProfileForm() {
   fillProfileForm(); // fill the profile form fields
   openPopUp(profileEditModal); // profileEditModal, variable element for loc:57 in html (close form)
-  console.log("Edit Form Modal was opened! "); // debugging code...
 }
 
 /**
@@ -210,7 +205,6 @@ function handleCardImageModal(cardData) {
   modalImage.alt = cardData.name;
   modalCaption.textContent = cardData.name; // loc:68 in js loc:115 in html
   openPopUp(cardImageModal); // see loc:67 in js and loc: 117 in html
-  console.log("This is the Card Data ", cardData); // debugging code...
 }
 
 /**
@@ -259,7 +253,6 @@ profileEditForm.addEventListener("submit", handleProfileEditSubmit); // calls ha
 
 cardCloseButton.addEventListener("click", (evt) => {
   closePopUp(cardAddModal); // closes the form loc:85 in html for adding new card loc:53 js file
-  console.log("cardCloseButton got clicked", evt.target);
 });
 
 // see loc:182 for closeCardImageModal() function definition
