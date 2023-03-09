@@ -79,14 +79,10 @@ const modalContainerCard = document.querySelector(".modal__container-card");
  * -----------------
  */
 
-// PROJECT 6 OVERVIEW | JOSH Video: 38:37 / 55:42
-// handler which calls the isEscEvent() function
-// this is SPRINT 6: STEP 4 "closing popup with Esc"
-
 // keycode for esc key
 const ESC_KEYCODE = 27;
 
-// for clicking on ESC key to close modal forms...
+// for clicking on ESC key to close modal forms...(It now works)
 const handleEscUp = (evt) => {
   evt.preventDefault();
   const activePopup = document.querySelector(".modal_opened");
@@ -224,9 +220,6 @@ profileCloseButton.addEventListener("click", closeProfileEditModal);
 
 // General 'mousedown' function handler for closing any modal
 function closeModalOnRemoteClick(evt) {
-  // target is the element on which the event happened
-  // currentTarget is the modal
-  // if they are the same then we should close the modal
   if (
     evt.target === evt.currentTarget ||
     evt.target.classList.contains("modal__close")
@@ -235,17 +228,11 @@ function closeModalOnRemoteClick(evt) {
   }
 }
 
-// code for closing profile Edit modal form if clicked outside of modal form...(profileEditModal)
 profileEditModal.addEventListener("mousedown", closeModalOnRemoteClick);
-
-// code for closing cardAddModal "#card-add-modal" using 'mousedown' when clicking on Overlay
 cardAddModal.addEventListener("mousedown", closeModalOnRemoteClick);
-
-// code for closing modalImage #card-modal-image" (blown-up card image) using 'mousedown'
 cardImageModal.addEventListener("mousedown", closeModalOnRemoteClick);
 
-//Good coding practice: Submit handlers are added only to form tags with event submit rather than to submit buttons with event click because it also automatically handles Enter presses
-profileEditForm.addEventListener("submit", handleProfileEditSubmit); // calls handleProfileEditSubmit at loc:157 which calls closePopUp(profileEditModal); see loc:43 in js file
+profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
 cardCloseButton.addEventListener("click", (evt) => {
   closePopUp(cardAddModal); // closes the form loc:85 in html for adding new card loc:53 js file
