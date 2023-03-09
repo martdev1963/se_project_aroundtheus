@@ -87,11 +87,11 @@ const modalContainerCard = document.querySelector(".modal__container-card");
 const ESC_KEYCODE = 27;
 
 // for clicking on ESC key to close modal forms...
-const handleEscUp = (evt, action) => {
+const handleEscUp = (evt) => {
   evt.preventDefault();
   const activePopup = document.querySelector(".modal_opened");
   if (evt.which === ESC_KEYCODE) {
-    action(activePopup);
+    closePopUp(activePopup);
   }
 };
 
@@ -101,7 +101,6 @@ const handleOverlayClick = (evt) => {
   //isOverlayClicked(evt, closePopUp);
 };
 
-// Both closePopUp() and openPopUp() functions are used to open/close 3 different modal forms...the profile edit/add new card and cardimage modals
 function closePopUp(popUp) {
   // uses the parameter popUp, making it more transparent and not for just one specific element.
   popUp.classList.remove("modal_opened"); // removes boolean modifier class from the box modal
@@ -152,7 +151,6 @@ function getCardView(cardData) {
   return cardElement; // return cardElement which is a clone of the cardTemplate
 } // * getCardView() function definition END *
 
-// function for adding a card - per code review
 function addCard(e) {
   e.preventDefault();
   const name = e.target.title.value;
@@ -161,7 +159,7 @@ function addCard(e) {
   renderCard(cardView, cardListElement); // place card data into <ul> element
   closePopUp(cardAddModal);
   cardAddForm.reset();
-  toggleButtonState(inputElements, submitButton, validationOptions); //call toggleButtonState() to disable submit button
+  toggleButtonState(inputElements, submitButton, validationOptions);
 }
 
 // function declaration per code review with 'Could be improved' status
