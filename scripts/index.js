@@ -82,7 +82,7 @@ const modalContainerCard = document.querySelector(".modal__container-card");
 // keycode for esc key
 const ESC_KEYCODE = 27;
 
-// for clicking on ESC key to close modal forms...(It now works)
+// for clicking on ESC key to close modal forms
 const handleEscUp = (evt) => {
   evt.preventDefault();
   const activePopup = document.querySelector(".modal_opened");

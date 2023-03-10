@@ -58,7 +58,7 @@ function disableSubmitButton(submitButton, { inactiveButtonClass }) {
 
 function enableSubmitButton(submitButton, { inactiveButtonClass }) {
   submitButton.classList.remove(inactiveButtonClass);
-  submitButton.disabled;
+  submitButton.disabled = false;
 }
 
 function toggleButtonState(
