@@ -2,6 +2,12 @@ function enableValidation(validationOptions) {
   const forms = Array.from(
     document.querySelectorAll(validationOptions.formSelector) // specifying object's property to select
   );
+
+  // using spread operator ... instead of Array.from() - 'Could be improved' from code review...
+  //const spreadForms = [
+  //  ...document.querySelectorAll(validationOptions.formSelector),
+  //];
+
   forms.forEach((formElement) => {
     formElement.addEventListener("submit", (evt) => {
       evt.preventDefault();
@@ -39,12 +45,21 @@ function hideInputError(
   errorSpanElement.classList.remove(errorClass);
 }
 
+//function checkInputValidity(formElement, inputElement, validationOptions) {
+//  if (!inputElement.validity.valid) {
+//    return showInputError(formElement, inputElement, validationOptions);
+//  }
+
+//  hideInputError(formElement, inputElement, validationOptions);
+//}
+
+// per code review 'Coiuld be improved'
 function checkInputValidity(formElement, inputElement, validationOptions) {
   if (!inputElement.validity.valid) {
-    return showInputError(formElement, inputElement, validationOptions);
+    showInputError(formElement, inputElement, validationOptions);
+  } else {
+    hideInputError(formElement, inputElement, validationOptions);
   }
-
-  hideInputError(formElement, inputElement, validationOptions);
 }
 
 function hasInvalidInput(inputList) {
