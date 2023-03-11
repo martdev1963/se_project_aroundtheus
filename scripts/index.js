@@ -84,7 +84,6 @@ const ESC_KEYCODE = 27;
 
 // for clicking on ESC key to close modal forms
 const handleEscUp = (evt) => {
-  evt.preventDefault();
   if (evt.which === ESC_KEYCODE) {
     const activePopup = document.querySelector(".modal_opened"); // identify and target the opened popUp modal to close it
     closePopUp(activePopup);

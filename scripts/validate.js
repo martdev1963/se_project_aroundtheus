@@ -100,9 +100,11 @@ function setEventListeners(formElement, validationOptions) {
   toggleButtonState(inputElements, submitButton, validationOptions);
 
   inputElements.forEach((inputElement) => {
-    inputElement.addEventListener("input", () => {
+    inputElement.addEventListener("input", (e) => {
       checkInputValidity(formElement, inputElement, validationOptions);
       toggleButtonState(inputElements, submitButton, validationOptions);
+      console.log(inputElement.validity.valid);
+      console.log(inputElement.validationMessage);
     });
   });
 }
