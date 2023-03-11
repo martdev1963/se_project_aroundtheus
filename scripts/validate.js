@@ -21,13 +21,13 @@ function enableValidation(validationOptions) {
 function showInputError(
   formElement,
   inputElement,
-  { inputErrorClass, errorClass } // properties of validationOptions object loc:73/74
+  { inputErrorClass, errorClass }
 ) {
   const errorSpanElement = formElement.querySelector(
-    // as an alternative to a template literal: '#' + inputElement.id + '-error'
     `#${inputElement.id}-error`
   );
-  inputElement.classList.add(inputErrorClass); // styles the input w/red border
+  inputElement.classList.add(inputErrorClass);
+  console.log("inputErrorClass class executed...", inputErrorClass);
   errorSpanElement.textContent = inputElement.validationMessage;
   errorSpanElement.classList.add(errorClass);
 }
@@ -41,7 +41,7 @@ function hideInputError(
   const errorSpanElement = formElement.querySelector(
     `#${inputElement.id}-error`
   );
-  inputElement.classList.remove(inputErrorClass); // styles the input w/red border
+  inputElement.classList.remove(inputErrorClass);
   errorSpanElement.textContent = "";
   errorSpanElement.classList.remove(errorClass);
 }

@@ -110,13 +110,9 @@
   margin-top: 54px;
 }
 
-.modal__input_type_error {
-  border-bottom: solid 1px #ff0000;
-}
-
 .modal__input {
   /* inputSelector: validationOptions object's property */
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   border: none; /* per code review */
   border-bottom: 1px solid #000000;
   font-family: "Inter", Arial, sans-serif;
@@ -126,6 +122,10 @@
   line-height: 17px;
   padding: 0;
   width: 100%;
+}
+
+.modal__input_type_error {
+  border-bottom: solid 1px #ff0000;
 }
 
 /*Save and Create modal buttons*/
