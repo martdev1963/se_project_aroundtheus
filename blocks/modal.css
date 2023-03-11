@@ -13,6 +13,8 @@
   border: none; /* per code review */
   opacity: 0;
   transition: visibility 0s ease 0.6s, opacity 0.6s ease;
+  align-items: center;
+  justify-content: center;
   pointer-events: none;
 }
 /* modal container for edit-form and new place modals */
@@ -30,7 +32,7 @@
 
 /* modifier class just for 'blown-up' card modal. Parent container of .modal__close (x icon) among other children tags */
 /*associated html loc:131 which contains modal__close button loc:135  loc:49 css*/
-.modal_container-card {
+.modal__container-card {
   position: relative;
   /*padding: 366px;*/
   margin: auto;
@@ -42,8 +44,6 @@
 /* modifier class */
 .modal_opened {
   display: flex;
-  align-items: center;
-  justify-content: center;
   visibility: visible;
   pointer-events: all;
   opacity: 1;
@@ -121,6 +121,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: 17px;
+  margin-bottom: 57px;
   width: 100%;
 }
 
@@ -130,7 +131,7 @@
 
 .modal__input {
   /* inputSelector: validationOptions object's property */
-  margin-bottom: 57.08px;
+  margin-bottom: 30px;
   border: none; /* per code review */
   border-bottom: 1px solid #000000;
   font-family: "Inter", Arial, sans-serif;
@@ -156,22 +157,12 @@
   margin-bottom: 36.51px;
 }
 
-.modal__button:hover {
-  opacity: 0.8;
-}
-
 .modal__button:hover:not(:disabled) {
   /* 1st way */
   /*disabled button shouldn't have hover state*/
   /*selects not disabled hovered button*/
   opacity: 0.8;
 }
-
-/* 2nd way */
-/*this turns on hover*/
-/*.modal__button_disabled:hover {
-  /*opacity: 1;
-/*}*/
 
 /* new classes start */
 .modal__error {

@@ -85,17 +85,10 @@ const ESC_KEYCODE = 27;
 // for clicking on ESC key to close modal forms
 const handleEscUp = (evt) => {
   evt.preventDefault();
-  const activePopup = document.querySelector(".modal_opened");
-  if (activePopup) {
-    if (evt.which === ESC_KEYCODE) {
-      closePopUp(activePopup);
-    }
+  if (evt.which === ESC_KEYCODE) {
+    const activePopup = document.querySelector(".modal_opened"); // identify and target the opened popUp modal to close it
+    closePopUp(activePopup);
   }
-};
-
-// for clicking/mousedown on Overlay...outside of modal forms to close them...STEP 3
-const handleOverlayClick = (evt) => {
-  evt.preventDefault();
 };
 
 function closePopUp(popUp) {
@@ -152,7 +145,12 @@ function addCard(e) {
   renderCard(cardView, cardListElement); // place card data into <ul> element
   closePopUp(cardAddModal);
   cardAddForm.reset();
-  toggleButtonState(inputElements, submitButton, validationOptions);
+  const cardFormSubmitButton = e.target.querySelector(".modal__button");
+  toggleButtonState(
+    [e.target.title, e.target.link],
+    cardFormSubmitButton,
+    validationOptions
+  );
 }
 
 // function declaration per code review with 'Could be improved' status

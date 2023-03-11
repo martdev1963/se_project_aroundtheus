@@ -6,14 +6,14 @@ function enableValidation(validationOptions) {
   // using spread operator ... instead of Array.from() - 'Could be improved' from code review...
   //const spreadForms = [
   //  ...document.querySelectorAll(validationOptions.formSelector),
-  //];
+  //]; // spreadForms is an array
 
   forms.forEach((formElement) => {
     formElement.addEventListener("submit", (evt) => {
-      evt.preventDefault();
+      evt.preventDefault(); // to prevent page refresh...
     });
 
-    setEventListeners(formElement, validationOptions); // sets EventListeners for all specified options in the object
+    setEventListeners(formElement, validationOptions); // sets EventListeners for all specified options in the object: validationOptions
   });
 }
 
@@ -53,7 +53,7 @@ function hideInputError(
 //  hideInputError(formElement, inputElement, validationOptions);
 //}
 
-// per code review 'Coiuld be improved'
+// per code review 'Could be improved'
 function checkInputValidity(formElement, inputElement, validationOptions) {
   if (!inputElement.validity.valid) {
     showInputError(formElement, inputElement, validationOptions);
@@ -96,7 +96,7 @@ function setEventListeners(formElement, validationOptions) {
     validationOptions.submitButtonSelector
   );
 
-  // call toggle ButtonState() which calls hasInvalidInput() and sets button state
+  // call toggleButtonState() which calls hasInvalidInput() and sets button state
   toggleButtonState(inputElements, submitButton, validationOptions);
 
   inputElements.forEach((inputElement) => {
@@ -107,7 +107,7 @@ function setEventListeners(formElement, validationOptions) {
   });
 }
 
-// object that contains the validation options...
+// object that contains the validation options...(all key : value pairs)
 const validationOptions = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
@@ -118,4 +118,4 @@ const validationOptions = {
 };
 
 // calling enableValidation() function to enable all the validationOptions...
-enableValidation(validationOptions);
+enableValidation(validationOptions); // passing variable which is an object reference
