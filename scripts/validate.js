@@ -24,6 +24,7 @@ function showInputError(
   { inputErrorClass, errorClass } // properties of validationOptions object loc:73/74
 ) {
   const errorSpanElement = formElement.querySelector(
+    // as an alternative to a template literal: '#' + inputElement.id + '-error'
     `#${inputElement.id}-error`
   );
   inputElement.classList.add(inputErrorClass); // styles the input w/red border
@@ -41,17 +42,19 @@ function hideInputError(
     `#${inputElement.id}-error`
   );
   inputElement.classList.remove(inputErrorClass); // styles the input w/red border
-  errorSpanElement.textContent = inputElement.validationMessage;
+  errorSpanElement.textContent = "";
   errorSpanElement.classList.remove(errorClass);
 }
 
-//function checkInputValidity(formElement, inputElement, validationOptions) {
-//  if (!inputElement.validity.valid) {
-//    return showInputError(formElement, inputElement, validationOptions);
-//  }
+/*
+function checkInputValidity(formElement, inputElement, validationOptions) {
+  if (!inputElement.validity.valid) {
+    return showInputError(formElement, inputElement, validationOptions);
+  }
 
-//  hideInputError(formElement, inputElement, validationOptions);
-//}
+  hideInputError(formElement, inputElement, validationOptions);
+}
+*/
 
 // per code review 'Could be improved'
 function checkInputValidity(formElement, inputElement, validationOptions) {
@@ -63,7 +66,7 @@ function checkInputValidity(formElement, inputElement, validationOptions) {
 }
 
 function hasInvalidInput(inputList) {
-  return !inputList.every((inputElement) => inputElement.validity.valid);
+  return !inputList.every((inputElement) => inputElement.validity.valid); // the every() method is an array method that sort of works like the forEach()
 }
 
 function disableSubmitButton(submitButton, { inactiveButtonClass }) {
@@ -103,8 +106,6 @@ function setEventListeners(formElement, validationOptions) {
     inputElement.addEventListener("input", (e) => {
       checkInputValidity(formElement, inputElement, validationOptions);
       toggleButtonState(inputElements, submitButton, validationOptions);
-      console.log(inputElement.validity.valid);
-      console.log(inputElement.validationMessage);
     });
   });
 }
