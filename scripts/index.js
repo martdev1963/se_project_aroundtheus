@@ -40,7 +40,6 @@ const cardData = {
 };
 
 const card = new Card(cardData);
-console.log(card);
 
 /**
  * ------------------------------------------------------
