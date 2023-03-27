@@ -1,3 +1,5 @@
+import Card from "./Card.js";
+
 /**
  * ---------------------------
  *     Array of Objects
@@ -30,6 +32,15 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lago.jpg",
   },
 ];
+
+// for testing purposes...
+const cardData = {
+  name: "Vanoise National Park",
+  link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/vanoise.jpg",
+};
+
+const card = new Card(cardData);
+console.log(card);
 
 /**
  * ------------------------------------------------------

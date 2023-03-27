@@ -149,8 +149,15 @@
         </div>
       </li>
     </template>
-    <script type="text/javascript" src="./scripts/index.js" defer></script>
-    <script src="./scripts/validate.js" defer></script>
+    <!--Notice the use of the type attribute set to "module" for index.js -->
+    <script
+      type="text/javascript"
+      src="./scripts/index.js"
+      type="module"
+      defer
+    ></script>
+
+    <!--    <script src="./scripts/validate.js" defer></script> -->
     <!-- added defer attribute per code review -->
     <!--placed script tag here so that the DOM gets loaded with the html elements' classes and ids, etc... before script is parsed.-->
   </body>
